@@ -5,12 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/**/*.json'"
   },
   "dependencies": {
     "core-js": "^2.6.5",
     "element-ui": "^2.8.2",
     "vue": "^2.6.10",
+    "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
@@ -25,6 +27,7 @@
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.5.21"
   }
 }
