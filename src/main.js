@@ -9,6 +9,8 @@ import VeeValidate from 'vee-validate'
 import en from 'vee-validate/dist/locale/en'
 import zh from 'vee-validate/dist/locale/zh_CN'
 import './assets/themes/element-variables.scss'
+import './assets/styles/reset.styl'
+import './assets/styles/global.styl'
 
 Vue.config.productionTip = false
 Vue.prototype.$api = api
