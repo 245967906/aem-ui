@@ -4,6 +4,23 @@
       "META": {
         "TITLE": "login"
       }
+    },
+    "HOME": {
+      "META": {
+        "TITLE": "home"
+      }
+    }
+  },
+  "AUTH": {
+    "FIELDS": {
+      "USERNAME": "username",
+      "PASSWORD": "password"
+    },
+    "PROMPT": {
+      "USERNAME": "username",
+      "PASSWORD": "password",
+      "FORGOT_PASSWORD": "forgot?",
+      "SIGNIN": "sign in"
     }
   }
 }

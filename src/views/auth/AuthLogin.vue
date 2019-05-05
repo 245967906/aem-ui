@@ -2,16 +2,19 @@
   <div class="login-container">
     <div class="login-wrapper">
       <auth-login-logo></auth-login-logo>
+      <auth-login-form></auth-login-form>
     </div>
   </div>
 </template>
 
 <script>
 import AuthLoginLogo from './components/AuthLoginLogo'
+import AuthLoginForm from './components/AuthLoginForm'
 export default {
   name: 'AuthLogin',
   components: {
-    AuthLoginLogo
+    AuthLoginLogo,
+    AuthLoginForm
   }
 }
 </script>
