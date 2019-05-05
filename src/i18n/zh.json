@@ -4,6 +4,23 @@
       "META": {
         "TITLE": "登录"
       }
+    },
+    "HOME": {
+      "META": {
+        "TITLE": "首页"
+      }
+    }
+  },
+  "AUTH": {
+    "FIELDS": {
+      "USERNAME": "用户名",
+      "PASSWORD": "密码"
+    },
+    "PROMPT": {
+      "USERNAME": "请输入用户名",
+      "PASSWORD": "请输入密码",
+      "FORGOT_PASSWORD": "忘记密码？",
+      "SIGNIN": "登录"
     }
   }
 }
