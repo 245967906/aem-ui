@@ -1,1 +1,9 @@
-{}
+{
+  "ROUTER": {
+    "LOGIN": {
+      "META": {
+        "TITLE": "login"
+      }
+    }
+  }
+}

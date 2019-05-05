@@ -6,5 +6,14 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: []
+  routes: [
+    {
+      name: 'login',
+      path: '/login',
+      component: () => import('@/views/auth/AuthLogin'),
+      meta: {
+        title: 'ROUTER.LOGIN.META.TITLE'
+      }
+    }
+  ]
 })
