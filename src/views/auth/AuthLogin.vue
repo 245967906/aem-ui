@@ -4,15 +4,18 @@
       <auth-login-logo></auth-login-logo>
       <auth-login-form></auth-login-form>
     </div>
+    <app-particles></app-particles>
   </div>
 </template>
 
 <script>
+import AppParticles from '@/components/AppParticles'
 import AuthLoginLogo from './components/AuthLoginLogo'
 import AuthLoginForm from './components/AuthLoginForm'
 export default {
   name: 'AuthLogin',
   components: {
+    AppParticles,
     AuthLoginLogo,
     AuthLoginForm
   }
@@ -26,6 +29,7 @@ export default {
   justify-content center
   align-items center
   .login-wrapper
+    z-index 1
     display flex
     flex-direction column
     align-items center
