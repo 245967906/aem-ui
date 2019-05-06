@@ -22,5 +22,39 @@
       "FORGOT_PASSWORD": "forgot?",
       "SIGNIN": "sign in"
     }
+  },
+  "HEADER": {
+    "TITLE": "AEM",
+    "NAV": {
+      "CLUSTER": "Cluster",
+      "TASK_DEFINITION": "TaskDefinition",
+      "REGISTRY": "Registry"
+    },
+    "LANGUAGE": {
+      "EN": "English",
+      "ZH": "中文（简体）"
+    },
+    "REGION": {
+      "US-EAST-1": "US East (N. Virginia)",
+      "US-EAST-2": "US East (Ohio)",
+      "US-WEST-1": "US West (N. California)",
+      "US-WEST-2": "US West (Oregon)",
+      "AP-SOUTH-1": "Asia Pacific (Mumbai)",
+      "AP-NORTHEAST-1": "Asia Pacific (Tokyo)",
+      "AP-NORTHEAST-2": "Asia Pacific (Seoul)",
+      "AP-SOUTHEAST-1": "Asia Pacific (Singapore)",
+      "AP-SOUTHEAST-2": "Asia Pacific (Sydney)",
+      "CA-CENTRAL-1": "Canada (Central)",
+      "EU-CENTRAL-1": "EU (Frankfurt)",
+      "EU-NORTH-1": "EU (Stockholm)",
+      "EU-WEST-1": "EU (Ireland)",
+      "EU-WEST-2": "EU (London)",
+      "EU-WEST-3": "EU (Paris)",
+      "SA-EAST-1": "South America (São Paulo)"
+    },
+    "MENU": {
+      "PROFILE": "profile",
+      "SIGNOUT": "sign out"
+    }
   }
 }
