@@ -1,5 +1,26 @@
 import axios from 'axios'
+import router from '@/router'
 import settings from '@/settings'
+
+const interceptRequest = request => {
+  const auth = JSON.parse(localStorage.getItem('auth'))
+  request.headers['Authorization'] = auth ? auth.token : null
+  request.headers['Accept-Language'] = localStorage.getItem('language')
+  return request
+}
+
+const interceptResponseError = error => {
+  switch (error.response.status) {
+    case 401:
+      if (error.response.data.error.code == 10000) {
+        router.replace({
+          name: 'login',
+          query: { redirect: router.currentRoute.fullPath }
+        })
+      }
+  }
+  return error
+}
 
 const instance = axios.create({
   baseURL: settings.baseURL,
@@ -9,7 +30,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   request => {
-    return request
+    return interceptRequest(request)
   },
   error => {
     return Promise.reject(error)
@@ -21,6 +42,7 @@ instance.interceptors.response.use(
     return response
   },
   error => {
+    error = interceptResponseError(error)
     return Promise.reject(error)
   }
 )

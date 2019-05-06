@@ -1,10 +1,16 @@
 <template>
-  <div class="home-container"></div>
+  <div class="home-container">
+    <app-header></app-header>
+  </div>
 </template>
 
 <script>
+import AppHeader from '@/components/AppHeader'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    AppHeader
+  }
 }
 </script>
 
