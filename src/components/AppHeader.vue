@@ -61,7 +61,7 @@
         <div class="header-menu-item">
           <el-dropdown trigger="click" size="small">
             <span class="el-dropdown-link">
-              {{ currentUser.username
+              {{ profile.username
               }}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import settings from '@/settings'
 export default {
   name: 'AppHeader',
@@ -90,14 +91,17 @@ export default {
       languages: Object.keys(this.$i18n.messages),
       regions: settings.regions,
       currentLanguage: this.$i18n.locale,
-      currentRegion: localStorage.region || settings.regions[0],
-      currentUser: Object
+      currentRegion: localStorage.region || settings.regions[0]
     }
   },
+  computed: {
+    ...mapState(['profile'])
+  },
   mounted () {
-    this.getCurrentUserProfile()
+    this.getProfile()
   },
   methods: {
+    ...mapMutations(['changeProfile']),
     handleLanguageClick (language) {
       localStorage.language = language
       this.$router.go(0)
@@ -106,9 +110,9 @@ export default {
       localStorage.region = region
       this.$router.go(0)
     },
-    getCurrentUserProfile () {
+    getProfile () {
       this.$api.getProfile().then(res => {
-        this.currentUser = res.data.data
+        this.changeProfile(res.data.data)
       })
     },
     logout () {
