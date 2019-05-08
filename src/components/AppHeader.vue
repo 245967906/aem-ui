@@ -3,7 +3,7 @@
     <el-col :span="4">
       <router-link
         class="header-brand"
-        :to="this.$router.match({ name: 'home' }).path"
+        :to="this.$router.match({ name: 'home' })"
       >
         <div class="header-logo"></div>
         <div class="header-title">{{ $t('HEADER.TITLE') }}</div>
