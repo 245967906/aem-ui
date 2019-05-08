@@ -6,7 +6,7 @@
     <el-breadcrumb-item
       v-for="(item, index) in breadcrumbs"
       :key="index"
-      :to="item.path"
+      :to="item"
     >
       <span>{{ $t(item.meta.title) }}</span>
     </el-breadcrumb-item>

@@ -75,9 +75,7 @@ export default {
               auth.expires = timestamp + data.expires_in * 1000
               localStorage.auth = JSON.stringify(auth)
               const home = this.$router.match({ name: 'home' })
-              this.$router.push({
-                path: this.$route.query.redirect || home.path
-              })
+              this.$router.push(this.$route.query.redirect || home)
             })
             .catch(err => {
               this.error = err.response.data.error
