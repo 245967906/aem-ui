@@ -46,12 +46,13 @@ export default {
 @import '~@/assets/styles/variables.styl'
 .breadcrumb-container >>> .el-breadcrumb__inner
 .breadcrumb-container >>> .el-breadcrumb__inner:hover
+  font-size 13px
   font-weight 400
   color $hue
 .breadcrumb-container
   display flex
   align-items center
-  border-bottom 1px solid #eef
   padding 0 20px
-  height 30px
+  height 22px
+  background #00adb5
 </style>
