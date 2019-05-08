@@ -49,6 +49,8 @@ export default {
   font-size 13px
   font-weight 400
   color $hue
+.breadcrumb-container >>> .el-breadcrumb__separator
+  color $hue
 .breadcrumb-container
   display flex
   align-items center
