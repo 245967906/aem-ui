@@ -127,7 +127,7 @@ export default {
 @import '~@/assets/styles/variables.styl'
 .el-dropdown-link
   font-size 13px
-  color $hue
+  color #fff
   cursor pointer
 .el-dropdown-menu__item, .el-dropdown-menu__item a
   font-size 12px
@@ -140,6 +140,7 @@ export default {
   width 100%
   height 55px
   white-space nowrap
+  background $hue
   .header-brand
     display flex
     align-items center
@@ -151,12 +152,12 @@ export default {
     .header-title
       margin 0 10px
       font-size 16px
-      color $hue
+      color #fff
   .header-nav
     .header-nav-item
       margin 0 20px
       font-size 13px
-      color $hue
+      color #fff
   .header-menu
     display flex
     justify-content flex-end
