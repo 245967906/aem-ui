@@ -9,6 +9,11 @@
       "META": {
         "TITLE": "home"
       }
+    },
+    "PROFILE": {
+      "META": {
+        "TITLE": "profile"
+      }
     }
   },
   "AUTH": {

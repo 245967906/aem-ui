@@ -9,6 +9,11 @@
       "META": {
         "TITLE": "首页"
       }
+    },
+    "PROFILE": {
+      "META": {
+        "TITLE": "个人设置"
+      }
     }
   },
   "AUTH": {
