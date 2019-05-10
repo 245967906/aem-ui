@@ -1,5 +1,5 @@
 export default {
-  changeProfile (state, profile) {
-    state.profile = profile
+  changeUserProfile (state, profile) {
+    state.userProfile = profile
   }
 }

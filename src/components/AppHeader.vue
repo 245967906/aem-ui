@@ -61,7 +61,7 @@
         <div class="header-menu-item">
           <el-dropdown trigger="click" size="small">
             <span class="el-dropdown-link">
-              {{ profile.username
+              {{ userProfile.username
               }}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 import settings from '@/settings'
 export default {
   name: 'AppHeader',
@@ -95,13 +95,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(['profile'])
-  },
-  mounted () {
-    this.getProfile()
+    ...mapState(['userProfile'])
   },
   methods: {
-    ...mapMutations(['changeProfile']),
     handleLanguageClick (language) {
       localStorage.language = language
       this.$router.go(0)
@@ -109,11 +105,6 @@ export default {
     handleRegionClick (region) {
       localStorage.region = region
       this.$router.go(0)
-    },
-    getProfile () {
-      this.$api.getProfile().then(res => {
-        this.changeProfile(res.data.data)
-      })
     },
     logout () {
       delete localStorage.auth

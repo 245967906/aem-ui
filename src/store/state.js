@@ -1,3 +1,3 @@
 export default {
-  profile: Object
+  userProfile: {}
 }
