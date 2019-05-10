@@ -1,5 +1,5 @@
 export default {
-  changeProfile (ctx, profile) {
-    ctx.commit('changeProfle', profile)
+  changeUserProfile (ctx, profile) {
+    ctx.commit('changeUserProfile', profile)
   }
 }
