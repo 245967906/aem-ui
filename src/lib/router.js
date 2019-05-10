@@ -1,7 +1,7 @@
 import store from '@/store'
 import api from '@/api'
 
-export class RouterGuard {
+export class NavGuard {
   constructor (to, from, next) {
     this.to = to
     this.from = from

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { RouterGuard } from '@/lib/router'
+import { NavGuard } from '@/lib/router'
 import auth from './auth'
 import home from './home'
 
@@ -13,7 +13,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  const guard = new RouterGuard(to, from, next)
+  const guard = new NavGuard(to, from, next)
   guard.dispatch()
 })
 
