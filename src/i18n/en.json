@@ -9,6 +9,11 @@
       "META": {
         "TITLE": "home"
       }
+    },
+    "PROFILE": {
+      "META": {
+        "TITLE": "profile"
+      }
     }
   },
   "AUTH": {
@@ -55,6 +60,29 @@
     "MENU": {
       "PROFILE": "profile",
       "SIGNOUT": "sign out"
+    }
+  },
+  "PROFILE": {
+    "FIELDS": {
+      "AWS_ACCESS_KEY_ID": "AWS Access Key ID",
+      "AWS_SECRET_ACCESS_KEY": "AWS Secret Access Key"
+    },
+    "PROMPT": {
+      "USERNAME": "Username",
+      "EMAIL": "Email",
+      "ROLE": "Role",
+      "AWS_ACCESS_KEY_ID": "AWS Access Key ID",
+      "AWS_SECRET_ACCESS_KEY": "AWS Secret Access Key",
+      "UPDATE": "Update"
+    },
+    "USERTYPE": {
+      "ADMIN": "admin",
+      "OPERATOR": "operator",
+      "DEVELOPER": "developer"
+    },
+    "TOAST": {
+      "SUCCESS": "Update successfully",
+      "ERROR": "Network failure, please try again later"
     }
   }
 }

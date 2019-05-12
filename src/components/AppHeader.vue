@@ -66,7 +66,7 @@
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <router-link to="#">
+                <router-link :to="$router.match({ name: 'profile' })">
                   {{ $t('HEADER.MENU.PROFILE') }}
                 </router-link>
               </el-dropdown-item>
