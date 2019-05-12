@@ -20,7 +20,7 @@ export class NavGuard {
   }
   fetchUserProfile () {
     if (this.authenticated && !Object.keys(store.state.userProfile).length) {
-      api.getProfile().then(res => {
+      api.getUserProfile().then(res => {
         store.dispatch('changeUserProfile', res.data.data)
       })
     }

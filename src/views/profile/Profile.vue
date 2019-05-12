@@ -13,17 +13,17 @@
           ref="form"
           label-width="200px"
         >
-          <el-form-item :label="$t('PROFILE.FIELDS.USERNAME')">
+          <el-form-item :label="$t('PROFILE.PROMPT.USERNAME')">
             <el-input
               name="username"
               v-model="payload.username"
               disabled
             ></el-input>
           </el-form-item>
-          <el-form-item :label="$t('PROFILE.FIELDS.EMAIL')">
+          <el-form-item :label="$t('PROFILE.PROMPT.EMAIL')">
             <el-input name="email" v-model="payload.email" disabled></el-input>
           </el-form-item>
-          <el-form-item :label="$t('PROFILE.FIELDS.ROLE')">
+          <el-form-item :label="$t('PROFILE.PROMPT.ROLE')">
             <el-radio-group name="role" v-model="payload.role" disabled>
               <el-radio :label="0">{{ $t('PROFILE.USERTYPE.ADMIN') }}</el-radio>
               <el-radio :label="1">{{
@@ -34,22 +34,39 @@
               }}</el-radio>
             </el-radio-group>
           </el-form-item>
-          <el-form-item :label="$t('PROFILE.FIELDS.AWS_ACCESS_KEY_ID')">
+          <el-form-item
+            :class="{ 'has-error': verrors.has('aws_access_key_id') }"
+            :label="$t('PROFILE.PROMPT.AWS_ACCESS_KEY_ID')"
+          >
             <el-input
               name="aws_access_key_id"
               v-model="payload.aws_access_key_id"
+              v-validate="'required|min:20|max:20'"
+              :data-vv-as="$t('PROFILE.FIELDS.AWS_ACCESS_KEY_ID')"
               show-password
             ></el-input>
+            <span :class="{ 'help-block': verrors.has('aws_access_key_id') }">{{
+              verrors.first('aws_access_key_id')
+            }}</span>
           </el-form-item>
-          <el-form-item :label="$t('PROFILE.FIELDS.AWS_SECRET_ACCESS_KEY')">
+          <el-form-item
+            :class="{ 'has-error': verrors.has('aws_secret_access_key') }"
+            :label="$t('PROFILE.PROMPT.AWS_SECRET_ACCESS_KEY')"
+          >
             <el-input
               name="aws_secret_access_key"
               v-model="payload.aws_secret_access_key"
+              v-validate="'required|min:40|max:40'"
+              :data-vv-as="$t('PROFILE.FIELDS.AWS_SECRET_ACCESS_KEY')"
               show-password
             ></el-input>
+            <span
+              :class="{ 'help-block': verrors.has('aws_secret_access_key') }"
+              >{{ verrors.first('aws_secret_access_key') }}</span
+            >
           </el-form-item>
           <el-form-item>
-            <el-button type="primary">{{
+            <el-button @click="updateUserProfile" type="primary">{{
               $t('PROFILE.PROMPT.UPDATE')
             }}</el-button>
           </el-form-item>
@@ -60,7 +77,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import AppHeader from '@/components/AppHeader'
 import AppBreadcrumb from '@/components/AppBreadcrumb'
 export default {
@@ -70,7 +87,34 @@ export default {
     AppBreadcrumb
   },
   computed: {
-    ...mapState({ payload: 'profile' })
+    ...mapState({ payload: 'userProfile' })
+  },
+  methods: {
+    ...mapMutations(['changeUserProfile']),
+    updateUserProfile () {
+      this.$validator.validateAll().then(isValid => {
+        if (isValid) {
+          this.$api
+            .updateUserProfile(this.payload)
+            .then(res => {
+              this.changeUserProfile(res.data.data)
+              this.$message({
+                showClose: true,
+                message: this.$t('PROFILE.TOAST.SUCCESS'),
+                type: 'success'
+              })
+            })
+            .catch(err => {
+              console.log(err)
+              this.$message({
+                showClose: true,
+                message: this.$t('PROFILE.TOAST.ERROR'),
+                type: 'error'
+              })
+            })
+        }
+      })
+    }
   }
 }
 </script>

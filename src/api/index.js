@@ -1,4 +1,4 @@
 import { login } from './auth'
-import { getProfile } from './profile'
+import { getUserProfile, updateUserProfile } from './profile'
 
-export default { login, getProfile }
+export default { login, getUserProfile, updateUserProfile }

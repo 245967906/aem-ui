@@ -64,13 +64,13 @@
   },
   "PROFILE": {
     "FIELDS": {
-      "USERNAME": "用户名",
-      "EMAIL": "邮箱地址",
-      "ROLE": "角色",
       "AWS_ACCESS_KEY_ID": "AWS访问密钥",
       "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥"
     },
     "PROMPT": {
+      "USERNAME": "用户名",
+      "EMAIL": "邮箱地址",
+      "ROLE": "角色",
       "AWS_ACCESS_KEY_ID": "AWS访问密钥",
       "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥",
       "UPDATE": "保存配置"
@@ -79,6 +79,10 @@
       "ADMIN": "管理员",
       "OPERATOR": "运维人员",
       "DEVELOPER": "开发人员"
+    },
+    "TOAST": {
+      "SUCCESS": "更新成功",
+      "ERROR": "网络抽风，请稍后重试"
     }
   }
 }
