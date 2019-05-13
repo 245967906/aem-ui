@@ -25,13 +25,12 @@
           </el-form-item>
           <el-form-item :label="$t('PROFILE.PROMPT.ROLE')">
             <el-radio-group name="role" v-model="payload.role" disabled>
-              <el-radio :label="0">{{ $t('PROFILE.USERTYPE.ADMIN') }}</el-radio>
-              <el-radio :label="1">{{
-                $t('PROFILE.USERTYPE.OPERATOR')
-              }}</el-radio>
-              <el-radio :label="2">{{
-                $t('PROFILE.USERTYPE.DEVELOPER')
-              }}</el-radio>
+              <el-radio
+                v-for="(item, index) in userType"
+                :key="index"
+                :label="item.value"
+                >{{ $t(item.name) }}</el-radio
+              >
             </el-radio-group>
           </el-form-item>
           <el-form-item
@@ -78,6 +77,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { userType } from '@/lib/types'
 import AppHeader from '@/components/AppHeader'
 import AppBreadcrumb from '@/components/AppBreadcrumb'
 export default {
@@ -85,6 +85,11 @@ export default {
   components: {
     AppHeader,
     AppBreadcrumb
+  },
+  data () {
+    return {
+      userType
+    }
   },
   computed: {
     ...mapState({ payload: 'userProfile' })

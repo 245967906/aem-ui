@@ -16,6 +16,13 @@
       }
     }
   },
+  "TYPE": {
+    "USERTYPE": {
+      "ADMIN": "管理员",
+      "OPERATOR": "运维人员",
+      "DEVELOPER": "开发人员"
+    }
+  },
   "AUTH": {
     "FIELDS": {
       "USERNAME": "用户名",
@@ -74,11 +81,6 @@
       "AWS_ACCESS_KEY_ID": "AWS访问密钥",
       "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥",
       "UPDATE": "保存配置"
-    },
-    "USERTYPE": {
-      "ADMIN": "管理员",
-      "OPERATOR": "运维人员",
-      "DEVELOPER": "开发人员"
     },
     "TOAST": {
       "SUCCESS": "更新成功",
