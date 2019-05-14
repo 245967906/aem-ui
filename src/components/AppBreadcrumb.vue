@@ -31,7 +31,7 @@ export default {
         matchedRoutes[0].name != homeRoute[0].name
           ? homeRoute.concat(matchedRoutes)
           : matchedRoutes
-      return breadcrumbs
+      return breadcrumbs.filter(x => x.meta.title)
     }
   },
   watch: {
