@@ -73,6 +73,14 @@
               <el-dropdown-item @click.native="logout">{{
                 $t('HEADER.MENU.SIGNOUT')
               }}</el-dropdown-item>
+              <el-dropdown-item
+                v-if="userProfile.role == admin.value"
+                divided
+              >
+                <router-link :to="$router.match({ name: 'admin' })">
+                  {{ $t('HEADER.MENU.ADMIN') }}
+                </router-link>
+              </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -84,6 +92,7 @@
 <script>
 import { mapState } from 'vuex'
 import settings from '@/settings'
+import { userType } from '@/lib/types'
 export default {
   name: 'AppHeader',
   data () {
@@ -91,7 +100,8 @@ export default {
       languages: Object.keys(this.$i18n.messages),
       regions: settings.regions,
       currentLanguage: this.$i18n.locale,
-      currentRegion: localStorage.region || settings.regions[0]
+      currentRegion: localStorage.region || settings.regions[0],
+      admin: userType.find(x => x.name == 'admin')
     }
   },
   computed: {
