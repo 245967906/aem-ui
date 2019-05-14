@@ -66,7 +66,8 @@
     },
     "MENU": {
       "PROFILE": "profile",
-      "SIGNOUT": "sign out"
+      "SIGNOUT": "sign out",
+      "ADMIN": "Admin area"
     }
   },
   "PROFILE": {

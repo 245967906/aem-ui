@@ -4,13 +4,14 @@ import { NavGuard } from '@/lib/router'
 import auth from './auth'
 import home from './home'
 import profile from './profile'
+import admin from './admin'
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: Array.prototype.concat(auth, home, profile)
+  routes: Array.prototype.concat(auth, home, profile, admin)
 })
 
 router.beforeEach((to, from, next) => {

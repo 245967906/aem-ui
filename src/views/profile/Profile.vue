@@ -29,7 +29,9 @@
                 v-for="(item, index) in userType"
                 :key="index"
                 :label="item.value"
-                >{{ $t(item.name) }}</el-radio
+                >{{
+                  $t('TYPE.USERTYPE' + '.' + item.name.toUpperCase())
+                }}</el-radio
               >
             </el-radio-group>
           </el-form-item>
