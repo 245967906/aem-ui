@@ -38,5 +38,5 @@ export default {
   .main-content
     display flex
     justify-content center
-    margin 25px 0
+    padding 25px 0
 </style>

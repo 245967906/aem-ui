@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <app-header></app-header>
-    <app-breadcrumb></app-breadcrumb>
-  </div>
+  <app-layout>
+    <template v-slot:default></template>
+  </app-layout>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader'
-import AppBreadcrumb from '@/components/AppBreadcrumb'
+import AppLayout from '@/components/AppLayout'
 export default {
   name: 'Admin',
   components: {
-    AppHeader,
-    AppBreadcrumb
+    AppLayout
   }
 }
 </script>
