@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <app-header></app-header>
-    <app-breadcrumb></app-breadcrumb>
-    <div class="profile-container">
-      <div class="profile-title">
-        <h3>{{ $t($route.meta.title) }}</h3>
-      </div>
-      <div class="profile-content">
+  <app-layout>
+    <template v-slot:default>
+      <div class="profile">
         <el-form
           class="profile-form"
           v-model="payload"
@@ -73,20 +68,18 @@
           </el-form-item>
         </el-form>
       </div>
-    </div>
-  </div>
+    </template>
+  </app-layout>
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { userType } from '@/lib/types'
-import AppHeader from '@/components/AppHeader'
-import AppBreadcrumb from '@/components/AppBreadcrumb'
+import AppLayout from '@/components/AppLayout'
 export default {
   name: 'Profile',
   components: {
-    AppHeader,
-    AppBreadcrumb
+    AppLayout
   },
   data () {
     return {
@@ -135,17 +128,10 @@ export default {
 >>> .el-input__inner, >>> .el-input .is-disabled
 >>> .el-radio__label
   font-weight 400
-.profile-container
-  padding 10px 10%
-  .profile-title
-    display flex
-    align-items center
-    border-bottom 1px solid #e7eaec
-    height 60px
-  .profile-content
-    display flex
-    justify-content center
-    margin 25px 0
-    .profile-form
-      width 100%
+.profile
+  display flex
+  justify-content center
+  width 100%
+  .profile-form
+    width 100%
 </style>
