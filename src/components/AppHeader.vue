@@ -77,7 +77,7 @@
                 v-if="userProfile.role == admin.value"
                 divided
               >
-                <router-link :to="$router.match({ name: 'admin' })">
+                <router-link :to="$router.match({ name: 'admin.user' })">
                   {{ $t('HEADER.MENU.ADMIN') }}
                 </router-link>
               </el-dropdown-item>

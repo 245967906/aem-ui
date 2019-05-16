@@ -1,6 +1,12 @@
 <template>
   <app-layout>
-    <template v-slot:default></template>
+    <template v-slot:title>
+      {{ $t('ROUTER.ADMIN.META.TITLE') }}
+    </template>
+
+    <template v-slot:default>
+      <router-view></router-view>
+    </template>
   </app-layout>
 </template>
 
