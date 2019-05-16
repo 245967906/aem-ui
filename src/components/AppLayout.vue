@@ -6,7 +6,7 @@
     </div>
     <div class="app-main">
       <div class="main-title">
-        <h3>{{ $t($route.meta.title) }}</h3>
+        <slot name="title">{{ $t($route.meta.title) }}</slot>
       </div>
       <div class="main-content">
         <slot></slot>
@@ -35,6 +35,7 @@ export default {
     align-items center
     border-bottom 1px solid #e7eaec
     height 60px
+    font-size 18.72px
   .main-content
     display flex
     justify-content center
