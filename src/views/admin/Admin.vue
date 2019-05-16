@@ -1,7 +1,7 @@
 <template>
   <app-layout>
     <template v-slot:title>
-      {{ $t('ROUTER.ADMIN.META.TITLE') }}
+      <admin-nav></admin-nav>
     </template>
 
     <template v-slot:default>
@@ -12,10 +12,12 @@
 
 <script>
 import AppLayout from '@/components/AppLayout'
+import AdminNav from './components/AdminNav'
 export default {
   name: 'Admin',
   components: {
-    AppLayout
+    AppLayout,
+    AdminNav
   }
 }
 </script>
