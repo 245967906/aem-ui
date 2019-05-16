@@ -14,6 +14,23 @@
       "META": {
         "TITLE": "个人设置"
       }
+    },
+    "ADMIN": {
+      "META": {
+        "TITLE": "管理后台"
+      },
+      "CHILDREN": {
+        "USER": {
+          "META": {
+            "TITLE": "用户管理"
+          }
+        },
+        "PERM": {
+          "META": {
+            "TITLE": "权限管理"
+          }
+        }
+      }
     }
   },
   "TYPE": {
