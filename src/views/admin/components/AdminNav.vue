@@ -20,6 +20,11 @@ export default {
     return {
       activeIndex: this.$route.path
     }
+  },
+  watch: {
+    $route () {
+      this.activeIndex = this.$route.path
+    }
   }
 }
 </script>
