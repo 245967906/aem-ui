@@ -1,9 +1,9 @@
 import instance from '@/lib/http'
 
 export const getUserProfile = () => {
-  return instance.get('/api/profile/')
+  return instance.get('/api/me')
 }
 
 export const updateUserProfile = params => {
-  return instance.put('/api/profile/', params)
+  return instance.patch('/api/me', params)
 }
