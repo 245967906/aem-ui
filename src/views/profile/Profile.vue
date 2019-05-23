@@ -4,22 +4,26 @@
       <div class="profile">
         <el-form
           class="profile-form"
-          v-model="payload"
+          v-model="userProfile"
           ref="form"
           label-width="200px"
         >
           <el-form-item :label="$t('PROFILE.PROMPT.USERNAME')">
             <el-input
               name="username"
-              v-model="payload.username"
+              v-model="userProfile.username"
               disabled
             ></el-input>
           </el-form-item>
           <el-form-item :label="$t('PROFILE.PROMPT.EMAIL')">
-            <el-input name="email" v-model="payload.email" disabled></el-input>
+            <el-input
+              name="email"
+              v-model="userProfile.email"
+              disabled
+            ></el-input>
           </el-form-item>
           <el-form-item :label="$t('PROFILE.PROMPT.ROLE')">
-            <el-radio-group name="role" v-model="payload.role" disabled>
+            <el-radio-group name="role" v-model="userProfile.role" disabled>
               <el-radio
                 v-for="(item, index) in userType"
                 :key="index"
@@ -36,7 +40,7 @@
           >
             <el-input
               name="aws_access_key_id"
-              v-model="payload.aws_access_key_id"
+              v-model="userProfile.aws_access_key_id"
               v-validate="'required|min:20|max:20'"
               :data-vv-as="$t('PROFILE.FIELDS.AWS_ACCESS_KEY_ID')"
               show-password
@@ -51,7 +55,7 @@
           >
             <el-input
               name="aws_secret_access_key"
-              v-model="payload.aws_secret_access_key"
+              v-model="userProfile.aws_secret_access_key"
               v-validate="'required|min:40|max:40'"
               :data-vv-as="$t('PROFILE.FIELDS.AWS_SECRET_ACCESS_KEY')"
               show-password
@@ -87,7 +91,7 @@ export default {
     }
   },
   computed: {
-    ...mapState({ payload: 'userProfile' })
+    ...mapState(['userProfile'])
   },
   methods: {
     ...mapMutations(['changeUserProfile']),
@@ -95,7 +99,10 @@ export default {
       this.$validator.validateAll().then(isValid => {
         if (isValid) {
           this.$api
-            .updateUserProfile(this.payload)
+            .updateUserProfile({
+              aws_access_key_id: this.userProfile.aws_access_key_id,
+              aws_secret_access_key: this.userProfile.aws_secret_access_key
+            })
             .then(res => {
               this.changeUserProfile(res.data.data)
               this.$message({
