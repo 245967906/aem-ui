@@ -69,7 +69,7 @@ export default {
           this.$api
             .login(this.payload)
             .then(res => {
-              const data = res.data.data
+              const data = res.data
               const auth = {}
               auth.token = data.token_type + ' ' + data.access_token
               auth.expires = timestamp + data.expires_in * 1000
@@ -78,7 +78,7 @@ export default {
               this.$router.push(this.$route.query.redirect || home)
             })
             .catch(err => {
-              this.error = err.response.data.error
+              this.error = err.response.data
             })
         }
       })

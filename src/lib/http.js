@@ -12,7 +12,7 @@ const interceptRequest = request => {
 const interceptResponseError = error => {
   switch (error.response.status) {
     case 401:
-      if (error.response.data.error.code == 10000) {
+      if (router.currentRoute.name != 'login') {
         router.replace({
           name: 'login',
           query: { redirect: router.currentRoute.fullPath }

@@ -104,7 +104,7 @@ export default {
               aws_secret_access_key: this.userProfile.aws_secret_access_key
             })
             .then(res => {
-              this.changeUserProfile(res.data.data)
+              this.changeUserProfile(res.data)
               this.$message({
                 showClose: true,
                 message: this.$t('PROFILE.TOAST.SUCCESS'),
