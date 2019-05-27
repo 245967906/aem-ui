@@ -36,8 +36,8 @@
   "TYPE": {
     "USERTYPE": {
       "ADMIN": "管理员",
-      "OPERATOR": "运维人员",
-      "DEVELOPER": "开发人员"
+      "OPERATOR": "运维",
+      "DEVELOPER": "开发"
     }
   },
   "AUTH": {
@@ -103,6 +103,27 @@
     "TOAST": {
       "SUCCESS": "更新成功",
       "ERROR": "网络抽风，请稍后重试"
+    }
+  },
+  "BUTTON": {
+    "DETAIL": "详情",
+    "BULK_DELETE": "删除所选",
+    "DELETE": "删除"
+  },
+  "PLACEHOLDER": {
+    "KEYWORD": "请输入搜索关键字"
+  },
+  "TITLE": {
+    "ACTION": "操作"
+  },
+  "ADMIN": {
+    "USER": {
+      "CREATE": "创建用户",
+      "LIST": {
+        "USERNAME": "用户名",
+        "EMAIL": "邮箱地址",
+        "ROLE": "角色"
+      }
     }
   }
 }

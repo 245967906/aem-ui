@@ -104,5 +104,26 @@
       "SUCCESS": "Update successfully",
       "ERROR": "Network failure, please try again later"
     }
+  },
+  "BUTTON": {
+    "DETAIL": "detail",
+    "BULK_DELETE": "Bulk delete",
+    "DELETE": "delete"
+  },
+  "PLACEHOLDER": {
+    "KEYWORD": "keyword"
+  },
+  "TITLE": {
+    "ACTION": "Actions"
+  },
+  "ADMIN": {
+    "USER": {
+      "CREATE": "Add user",
+      "LIST": {
+        "USERNAME": "Username",
+        "EMAIL": "Email",
+        "ROLE": "Role"
+      }
+    }
   }
 }
