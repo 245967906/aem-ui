@@ -37,7 +37,5 @@ export default {
     height 60px
     font-size 18.72px
   .main-content
-    display flex
-    justify-content center
     padding 25px 0
 </style>
