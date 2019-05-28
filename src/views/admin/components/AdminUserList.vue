@@ -96,7 +96,7 @@
 import TableMixin from '@/mixins/table'
 import { userType } from '@/lib/types'
 export default {
-  name: 'AdminManageUser',
+  name: 'AdminUserList',
   mixins: [TableMixin],
   data () {
     return {

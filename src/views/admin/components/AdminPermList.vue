@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'AdminManagePerm'
+  name: 'AdminPermList'
 }
 </script>
 
