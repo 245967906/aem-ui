@@ -108,7 +108,7 @@ export default {
       console.log(this.multipleSelection)
     },
     handleDetail (index, row) {
-      console.log(index, row)
+      this.$router.push({ name: 'admin.user.detail', params: { id: row.id } })
     },
     handleDelete (index, row) {
       console.log(index, row)

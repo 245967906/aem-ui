@@ -1,6 +1,6 @@
 <template>
   <app-layout>
-    <template v-slot:title>
+    <template v-if="!$route.meta.hideNav" v-slot:title>
       <admin-nav></admin-nav>
     </template>
 

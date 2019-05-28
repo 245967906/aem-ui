@@ -25,6 +25,11 @@
             "TITLE": "用户管理"
           }
         },
+        "USER_DETAIL": {
+          "META": {
+            "TITLE": "用户详情"
+          }
+        },
         "PERM": {
           "META": {
             "TITLE": "权限管理"
@@ -108,7 +113,8 @@
   "BUTTON": {
     "DETAIL": "详情",
     "BULK_DELETE": "删除所选",
-    "DELETE": "删除"
+    "DELETE": "删除",
+    "SUBMIT": "确认提交"
   },
   "PLACEHOLDER": {
     "KEYWORD": "请输入搜索关键字"

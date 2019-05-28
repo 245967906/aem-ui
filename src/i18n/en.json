@@ -25,6 +25,11 @@
             "TITLE": "User Management"
           }
         },
+        "USER_DETAIL": {
+          "META": {
+            "TITLE": "User Detail"
+          }
+        },
         "PERM": {
           "META": {
             "TITLE": "Perm Management"
@@ -108,7 +113,8 @@
   "BUTTON": {
     "DETAIL": "detail",
     "BULK_DELETE": "Bulk delete",
-    "DELETE": "delete"
+    "DELETE": "delete",
+    "SUBMIT": "Submit"
   },
   "PLACEHOLDER": {
     "KEYWORD": "keyword"
