@@ -8,14 +8,14 @@ export default [
       {
         name: 'admin.user',
         path: 'user',
-        meta: { title: 'ROUTER.ADMIN.CHILDREN.USER.META.TITLE' },
-        component: () => import('@/views/admin/components/AdminUserList')
+        component: () => import('@/views/admin/components/AdminUserList'),
+        meta: { title: 'ROUTER.ADMIN.CHILDREN.USER.META.TITLE' }
       },
       {
         name: 'admin.permission',
         path: 'permission',
-        meta: { title: 'ROUTER.ADMIN.CHILDREN.PERM.META.TITLE' },
-        component: () => import('@/views/admin/components/AdminPermList')
+        component: () => import('@/views/admin/components/AdminPermList'),
+        meta: { title: 'ROUTER.ADMIN.CHILDREN.PERM.META.TITLE' }
       }
     ]
   }
