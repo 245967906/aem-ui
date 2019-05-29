@@ -82,8 +82,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="currentPage"
-      :page-sizes="[
-      10, 20, 50, 100]"
+      :page-sizes="[10, 20, 50, 100]"
       :page-size="pageSize"
       layout="total, sizes, prev, pager, next, jumper"
       :total="tableData.total"
@@ -96,7 +95,7 @@
 import TableMixin from '@/mixins/table'
 import { userType } from '@/lib/types'
 export default {
-  name: 'AdminManageUser',
+  name: 'AdminUserList',
   mixins: [TableMixin],
   data () {
     return {
@@ -109,7 +108,7 @@ export default {
       console.log(this.multipleSelection)
     },
     handleDetail (index, row) {
-      console.log(index, row)
+      this.$router.push({ name: 'admin.user.detail', params: { id: row.id } })
     },
     handleDelete (index, row) {
       console.log(index, row)

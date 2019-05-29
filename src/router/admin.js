@@ -8,14 +8,23 @@ export default [
       {
         name: 'admin.user',
         path: 'user',
-        meta: { title: 'ROUTER.ADMIN.CHILDREN.USER.META.TITLE' },
-        component: () => import('@/views/admin/components/AdminManageUser')
+        component: () => import('@/views/admin/components/AdminUserList'),
+        meta: { title: 'ROUTER.ADMIN.CHILDREN.USER.META.TITLE' }
+      },
+      {
+        name: 'admin.user.detail',
+        path: '/admin/user/:id',
+        component: () => import('@/views/admin/components/AdminUserDetail'),
+        meta: {
+          title: 'ROUTER.ADMIN.CHILDREN.USER_DETAIL.META.TITLE',
+          hideNav: true
+        }
       },
       {
         name: 'admin.permission',
         path: 'permission',
-        meta: { title: 'ROUTER.ADMIN.CHILDREN.PERM.META.TITLE' },
-        component: () => import('@/views/admin/components/AdminManagePerm')
+        component: () => import('@/views/admin/components/AdminPermList'),
+        meta: { title: 'ROUTER.ADMIN.CHILDREN.PERM.META.TITLE' }
       }
     ]
   }

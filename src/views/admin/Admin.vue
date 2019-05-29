@@ -1,7 +1,9 @@
 <template>
   <app-layout>
-    <template v-slot:title>
-      <admin-nav></admin-nav>
+    <template v-if="!$route.meta.hideNav" v-slot:title>
+      <transition leave-active-class="hide">
+        <admin-nav></admin-nav>
+      </transition>
     </template>
 
     <template v-slot:default>
@@ -23,4 +25,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.hide
+  display none
 </style>
