@@ -4,7 +4,7 @@ export default [
     path: '/login',
     component: () => import('@/views/auth/AuthLogin'),
     meta: {
-      title: 'ROUTER.LOGIN.META.TITLE'
+      title: 'ROUTER.LOGIN'
     }
   }
 ]

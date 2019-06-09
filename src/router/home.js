@@ -4,7 +4,7 @@ export default [
     path: '/',
     component: () => import('@/views/home/Home'),
     meta: {
-      title: 'ROUTER.HOME.META.TITLE'
+      title: 'ROUTER.HOME'
     }
   }
 ]

@@ -1,135 +1,96 @@
 {
+  "BUTTON": {
+    "SUBMIT": "Submit",
+    "CREATE": "Add {name}",
+    "DETAIL": "detail",
+    "UPDATE": "Save",
+    "DELETE": "delete",
+    "BULK_DELETE": "Bulk delete"
+  },
+  "PROMPT": {
+    "ACTION": "Action",
+    "KEYWORD": "Keyword"
+  },
+  "TOAST": {
+    "SUCCESS": "Update successfully",
+    "ERROR": "Network failure, please try again later"
+  },
+  "RESOURCE": {
+    "USER": {
+      "TITLE": "User",
+      "ATTRIBUTE": {
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "EMAIL": "Email",
+        "ROLE": "Role",
+        "AWS_ACCESS_KEY_ID": "AWS ACCESS KEY ID",
+        "AWS_SECRET_ACCESS_KEY": "AWS SECRET ACCESS KEY"
+      }
+    }
+  },
   "ROUTER": {
-    "LOGIN": {
-      "META": {
-        "TITLE": "login"
-      }
-    },
-    "HOME": {
-      "META": {
-        "TITLE": "home"
-      }
-    },
-    "PROFILE": {
-      "META": {
-        "TITLE": "profile"
-      }
-    },
+    "LOGIN": "Login",
+    "HOME": "Home",
+    "PROFILE": "Profile",
     "ADMIN": {
-      "META": {
-        "TITLE": "Admin"
-      },
+      "TITLE": "Admin",
       "CHILDREN": {
         "USER": {
-          "META": {
-            "TITLE": "User Management"
-          }
-        },
-        "USER_DETAIL": {
-          "META": {
-            "TITLE": "User Detail"
-          }
+          "LIST": "User Management",
+          "DETAIL": "User Detail"
         },
         "PERM": {
-          "META": {
-            "TITLE": "Perm Management"
-          }
+          "LIST": "Perm Management"
         }
       }
     }
   },
   "TYPE": {
-    "USERTYPE": {
+    "USER": {
       "ADMIN": "admin",
       "OPERATOR": "operator",
       "DEVELOPER": "developer"
     }
   },
-  "AUTH": {
-    "FIELDS": {
-      "USERNAME": "username",
-      "PASSWORD": "password"
-    },
-    "PROMPT": {
-      "USERNAME": "username",
-      "PASSWORD": "password",
-      "FORGOT_PASSWORD": "forgot?",
-      "SIGNIN": "sign in"
-    }
-  },
-  "HEADER": {
-    "TITLE": "AEM",
-    "NAV": {
-      "CLUSTER": "Cluster",
-      "TASK_DEFINITION": "TaskDefinition",
-      "REGISTRY": "Registry"
-    },
-    "LANGUAGE": {
-      "EN": "English",
-      "ZH": "中文（简体）"
-    },
-    "REGION": {
-      "US-EAST-1": "US East (N. Virginia)",
-      "US-EAST-2": "US East (Ohio)",
-      "US-WEST-1": "US West (N. California)",
-      "US-WEST-2": "US West (Oregon)",
-      "AP-SOUTH-1": "Asia Pacific (Mumbai)",
-      "AP-NORTHEAST-1": "Asia Pacific (Tokyo)",
-      "AP-NORTHEAST-2": "Asia Pacific (Seoul)",
-      "AP-SOUTHEAST-1": "Asia Pacific (Singapore)",
-      "AP-SOUTHEAST-2": "Asia Pacific (Sydney)",
-      "CA-CENTRAL-1": "Canada (Central)",
-      "EU-CENTRAL-1": "EU (Frankfurt)",
-      "EU-NORTH-1": "EU (Stockholm)",
-      "EU-WEST-1": "EU (Ireland)",
-      "EU-WEST-2": "EU (London)",
-      "EU-WEST-3": "EU (Paris)",
-      "SA-EAST-1": "South America (São Paulo)"
-    },
-    "MENU": {
-      "PROFILE": "profile",
-      "SIGNOUT": "sign out",
-      "ADMIN": "Admin area"
-    }
-  },
-  "PROFILE": {
-    "FIELDS": {
-      "AWS_ACCESS_KEY_ID": "AWS Access Key ID",
-      "AWS_SECRET_ACCESS_KEY": "AWS Secret Access Key"
-    },
-    "PROMPT": {
-      "USERNAME": "Username",
-      "EMAIL": "Email",
-      "ROLE": "Role",
-      "AWS_ACCESS_KEY_ID": "AWS Access Key ID",
-      "AWS_SECRET_ACCESS_KEY": "AWS Secret Access Key",
-      "UPDATE": "Update"
-    },
-    "TOAST": {
-      "SUCCESS": "Update successfully",
-      "ERROR": "Network failure, please try again later"
-    }
-  },
-  "BUTTON": {
-    "DETAIL": "detail",
-    "BULK_DELETE": "Bulk delete",
-    "DELETE": "delete",
-    "SUBMIT": "Submit"
-  },
-  "PLACEHOLDER": {
-    "KEYWORD": "keyword"
-  },
-  "TITLE": {
-    "ACTION": "Actions"
-  },
-  "ADMIN": {
-    "USER": {
-      "CREATE": "Add user",
-      "LIST": {
-        "USERNAME": "Username",
-        "EMAIL": "Email",
-        "ROLE": "Role"
+  "VIEWS": {
+    "AUTH": {
+      "PLACEHOLDER": {
+        "USERNAME": "username",
+        "PASSWORD": "password",
+        "FORGOT_PASSWORD": "forgot?",
+        "SIGNIN": "Sign in"
       }
+    },
+    "HEADER": {
+      "TITLE": "AEM",
+      "NAV": {
+        "CLUSTER": "Cluster",
+        "TASK_DEFINITION": "TaskDefinition",
+        "REGISTRY": "Registry"
+      },
+      "LANGUAGE": {
+        "EN": "English",
+        "ZH": "中文（简体）"
+      },
+      "REGION": {
+        "US-EAST-1": "US East (N. Virginia)",
+        "US-EAST-2": "US East (Ohio)",
+        "US-WEST-1": "US West (N. California)",
+        "US-WEST-2": "US West (Oregon)",
+        "AP-SOUTH-1": "Asia Pacific (Mumbai)",
+        "AP-NORTHEAST-1": "Asia Pacific (Tokyo)",
+        "AP-NORTHEAST-2": "Asia Pacific (Seoul)",
+        "AP-SOUTHEAST-1": "Asia Pacific (Singapore)",
+        "AP-SOUTHEAST-2": "Asia Pacific (Sydney)",
+        "CA-CENTRAL-1": "Canada (Central)",
+        "EU-CENTRAL-1": "EU (Frankfurt)",
+        "EU-NORTH-1": "EU (Stockholm)",
+        "EU-WEST-1": "EU (Ireland)",
+        "EU-WEST-2": "EU (London)",
+        "EU-WEST-3": "EU (Paris)",
+        "SA-EAST-1": "South America (São Paulo)"
+      },
+      "SIGNOUT": "Sign out"
     }
   }
 }

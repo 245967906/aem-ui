@@ -2,41 +2,39 @@
   <app-layout>
     <template v-slot:default>
       <el-form v-model="userProfile" ref="form" label-width="200px">
-        <el-form-item :label="$t('PROFILE.PROMPT.USERNAME')">
+        <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')">
           <el-input
             name="username"
             v-model="userProfile.username"
             disabled
           ></el-input>
         </el-form-item>
-        <el-form-item :label="$t('PROFILE.PROMPT.EMAIL')">
+        <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.EMAIL')">
           <el-input
             name="email"
             v-model="userProfile.email"
             disabled
           ></el-input>
         </el-form-item>
-        <el-form-item :label="$t('PROFILE.PROMPT.ROLE')">
+        <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.ROLE')">
           <el-radio-group name="role" v-model="userProfile.role" disabled>
             <el-radio
               v-for="(item, index) in userType"
               :key="index"
               :label="item.value"
-              >{{
-                $t('TYPE.USERTYPE' + '.' + item.name.toUpperCase())
-              }}</el-radio
+              >{{ $t('TYPE.USER' + '.' + item.name.toUpperCase()) }}</el-radio
             >
           </el-radio-group>
         </el-form-item>
         <el-form-item
           :class="{ 'has-error': verrors.has('aws_access_key_id') }"
-          :label="$t('PROFILE.PROMPT.AWS_ACCESS_KEY_ID')"
+          :label="$t('RESOURCE.USER.ATTRIBUTE.AWS_ACCESS_KEY_ID')"
         >
           <el-input
             name="aws_access_key_id"
             v-model="userProfile.aws_access_key_id"
             v-validate="'required|min:20|max:20'"
-            :data-vv-as="$t('PROFILE.FIELDS.AWS_ACCESS_KEY_ID')"
+            :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.AWS_ACCESS_KEY_ID')"
             show-password
           ></el-input>
           <span :class="{ 'help-block': verrors.has('aws_access_key_id') }">{{
@@ -45,13 +43,13 @@
         </el-form-item>
         <el-form-item
           :class="{ 'has-error': verrors.has('aws_secret_access_key') }"
-          :label="$t('PROFILE.PROMPT.AWS_SECRET_ACCESS_KEY')"
+          :label="$t('RESOURCE.USER.ATTRIBUTE.AWS_SECRET_ACCESS_KEY')"
         >
           <el-input
             name="aws_secret_access_key"
             v-model="userProfile.aws_secret_access_key"
             v-validate="'required|min:40|max:40'"
-            :data-vv-as="$t('PROFILE.FIELDS.AWS_SECRET_ACCESS_KEY')"
+            :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.AWS_SECRET_ACCESS_KEY')"
             show-password
           ></el-input>
           <span
@@ -61,7 +59,7 @@
         </el-form-item>
         <el-form-item>
           <el-button @click="updateUserProfile" type="primary">{{
-            $t('PROFILE.PROMPT.UPDATE')
+            $t('BUTTON.UPDATE')
           }}</el-button>
         </el-form-item>
       </el-form>
@@ -100,7 +98,7 @@ export default {
               this.changeUserProfile(res.data)
               this.$message({
                 showClose: true,
-                message: this.$t('PROFILE.TOAST.SUCCESS'),
+                message: this.$t('TOAST.SUCCESS'),
                 type: 'success'
               })
             })
@@ -108,7 +106,7 @@ export default {
               console.log(err)
               this.$message({
                 showClose: true,
-                message: this.$t('PROFILE.TOAST.ERROR'),
+                message: this.$t('TOAST.ERROR'),
                 type: 'error'
               })
             })
