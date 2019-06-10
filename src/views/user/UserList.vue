@@ -116,7 +116,7 @@ export default {
     fetchTableData () {
       const limit = this.pageSize
       const offset = this.pageSize * (this.currentPage - 1)
-      this.$api.user.getUserList({ limit, offset }).then(res => {
+      this.$api.user.list({ limit, offset }).then(res => {
         this.tableData = res.data
       })
     }

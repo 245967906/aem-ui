@@ -1,6 +1,6 @@
 import instance from '@/lib/http'
 
-export const getUserList = params => {
+export const list = params => {
   return instance({
     method: 'get',
     url: '/api/users',
@@ -8,7 +8,7 @@ export const getUserList = params => {
   })
 }
 
-export const getUserDetail = id => {
+export const retrieve = id => {
   return instance({
     method: 'get',
     url: `/api/users/${id}`
