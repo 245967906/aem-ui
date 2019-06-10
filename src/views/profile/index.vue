@@ -89,7 +89,7 @@ export default {
     updateUserProfile () {
       this.$validator.validateAll().then(isValid => {
         if (isValid) {
-          this.$api
+          this.$api.profile
             .updateUserProfile({
               aws_access_key_id: this.userProfile.aws_access_key_id,
               aws_secret_access_key: this.userProfile.aws_secret_access_key

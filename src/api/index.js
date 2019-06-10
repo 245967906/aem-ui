@@ -1,11 +1,6 @@
-import { login } from './auth'
-import { getUserProfile, updateUserProfile } from './profile'
-import { getUserList, getUserDetail } from './user'
+import * as auth from './auth'
+import * as profile from './profile'
+import * as user from './user'
 
-export default {
-  login,
-  getUserProfile,
-  updateUserProfile,
-  getUserList,
-  getUserDetail
-}
+const api = { auth, profile, user }
+export default api

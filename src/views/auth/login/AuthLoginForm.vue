@@ -66,7 +66,7 @@ export default {
       this.error = {}
       this.$validator.validateAll().then(isValid => {
         if (isValid) {
-          this.$api
+          this.$api.auth
             .login(this.payload)
             .then(res => {
               const data = res.data
