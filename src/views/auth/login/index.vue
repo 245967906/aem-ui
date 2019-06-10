@@ -10,8 +10,8 @@
 
 <script>
 import AppParticles from '@/components/AppParticles'
-import AuthLoginLogo from './components/AuthLoginLogo'
-import AuthLoginForm from './components/AuthLoginForm'
+import AuthLoginLogo from './AuthLoginLogo'
+import AuthLoginForm from './AuthLoginForm'
 export default {
   name: 'AuthLogin',
   components: {

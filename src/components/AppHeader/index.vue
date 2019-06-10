@@ -77,7 +77,7 @@
                 $t('VIEWS.HEADER.SIGNOUT')
               }}</el-dropdown-item>
               <el-dropdown-item v-if="userProfile.role == admin.value" divided>
-                <router-link :to="$router.match({ name: 'admin.user' })">
+                <router-link :to="$router.match({ name: 'userList' })">
                   {{ $t('ROUTER.ADMIN.TITLE') }}
                 </router-link>
               </el-dropdown-item>

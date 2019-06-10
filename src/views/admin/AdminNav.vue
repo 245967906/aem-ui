@@ -1,12 +1,12 @@
 <template>
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-    <el-menu-item :index="$router.match({ name: 'admin.user' }).path">
-      <router-link :to="$router.match({ name: 'admin.user' })">{{
+    <el-menu-item :index="$router.match({ name: 'userList' }).path">
+      <router-link :to="$router.match({ name: 'userList' })">{{
         $t('ROUTER.ADMIN.CHILDREN.USER.LIST')
       }}</router-link>
     </el-menu-item>
-    <el-menu-item :index="$router.match({ name: 'admin.permission' }).path">
-      <router-link :to="$router.match({ name: 'admin.permission' })">{{
+    <el-menu-item :index="$router.match({ name: 'permissionList' }).path">
+      <router-link :to="$router.match({ name: 'permissionList' })">{{
         $t('ROUTER.ADMIN.CHILDREN.PERM.LIST')
       }}</router-link>
     </el-menu-item>

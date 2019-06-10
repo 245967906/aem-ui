@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import AppHeader from './AppHeader'
-import AppBreadcrumb from './AppBreadcrumb'
+import AppHeader from '@/components/AppHeader'
+import AppBreadcrumb from '@/components/AppBreadcrumb'
 export default {
   name: 'AppLayout',
   components: {

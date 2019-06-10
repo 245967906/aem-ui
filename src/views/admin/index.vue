@@ -14,7 +14,7 @@
 
 <script>
 import AppLayout from '@/components/AppLayout'
-import AdminNav from './components/AdminNav'
+import AdminNav from './AdminNav'
 export default {
   name: 'Admin',
   components: {

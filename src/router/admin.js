@@ -1,29 +1,29 @@
 export default [
   {
     path: '/admin',
-    component: () => import('@/views/admin/Admin'),
+    component: () => import('@/views/admin'),
     meta: { title: 'ROUTER.ADMIN.TITLE' },
     children: [
-      { path: '/', redirect: { name: 'admin.user' } },
+      { path: '/', redirect: { name: 'userList' } },
       {
-        name: 'admin.user',
-        path: 'user',
-        component: () => import('@/views/admin/components/AdminUserList'),
+        name: 'userList',
+        path: 'users',
+        component: () => import('@/views/user/UserList'),
         meta: { title: 'ROUTER.ADMIN.CHILDREN.USER.LIST' }
       },
       {
-        name: 'admin.user.detail',
-        path: '/admin/user/:id',
-        component: () => import('@/views/admin/components/AdminUserDetail'),
+        name: 'userDetail',
+        path: 'users/:id(\\d+)',
+        component: () => import('@/views/user/UserDetail'),
         meta: {
           title: 'ROUTER.ADMIN.CHILDREN.USER.DETAIL',
           hideNav: true
         }
       },
       {
-        name: 'admin.permission',
-        path: 'permission',
-        component: () => import('@/views/admin/components/AdminPermList'),
+        name: 'permissionList',
+        path: 'permissions',
+        component: () => import('@/views/permission/PermissionList'),
         meta: { title: 'ROUTER.ADMIN.CHILDREN.PERM.LIST' }
       }
     ]
