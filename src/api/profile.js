@@ -1,13 +1,13 @@
 import instance from '@/lib/http'
 
-export const getUserProfile = () => {
+export const retrieve = () => {
   return instance({
     method: 'get',
     url: '/api/me'
   })
 }
 
-export const updateUserProfile = data => {
+export const update = data => {
   return instance({
     method: 'patch',
     url: '/api/me',
