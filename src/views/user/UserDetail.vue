@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     getUserInfo () {
-      this.$api.getUserDetail(this.$route.params.id).then(res => {
+      this.$api.user.getUserDetail(this.$route.params.id).then(res => {
         this.userInfo = res.data
       })
     },
