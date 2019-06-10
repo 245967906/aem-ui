@@ -1,9 +1,16 @@
 import instance from '@/lib/http'
 
 export const getUserProfile = () => {
-  return instance.get('/api/me')
+  return instance({
+    method: 'get',
+    url: '/api/me'
+  })
 }
 
-export const updateUserProfile = params => {
-  return instance.patch('/api/me', params)
+export const updateUserProfile = data => {
+  return instance({
+    method: 'patch',
+    url: '/api/me',
+    data
+  })
 }

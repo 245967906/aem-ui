@@ -1,5 +1,9 @@
 import instance from '@/lib/http'
 
-export const login = params => {
-  return instance.post('/api/tokens', params)
+export const login = data => {
+  return instance({
+    method: 'post',
+    url: '/api/tokens',
+    data
+  })
 }
