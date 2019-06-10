@@ -14,3 +14,11 @@ export const retrieve = id => {
     url: `/api/users/${id}`
   })
 }
+
+export const create = data => {
+  return instance({
+    method: 'post',
+    url: '/api/users',
+    data
+  })
+}

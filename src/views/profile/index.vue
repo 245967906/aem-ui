@@ -98,7 +98,7 @@ export default {
               this.changeUserProfile(res.data)
               this.$message({
                 showClose: true,
-                message: this.$t('TOAST.SUCCESS'),
+                message: this.$t('TOAST.UPDATED'),
                 type: 'success'
               })
             })
@@ -106,7 +106,7 @@ export default {
               console.log(err)
               this.$message({
                 showClose: true,
-                message: this.$t('TOAST.ERROR'),
+                message: this.$t('TOAST.UNKONW_ERROR'),
                 type: 'error'
               })
             })

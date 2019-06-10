@@ -103,7 +103,9 @@ export default {
     }
   },
   methods: {
-    handleCreate () {},
+    handleCreate () {
+      this.$router.push({ name: 'userCreate' })
+    },
     handleBulkDelete () {
       console.log(this.multipleSelection)
     },

@@ -21,6 +21,15 @@ export default [
         }
       },
       {
+        name: 'userCreate',
+        path: 'users/new',
+        component: () => import('@/views/user/UserCreate'),
+        meta: {
+          title: 'ROUTER.ADMIN.CHILDREN.USER.CREATE',
+          hideNav: true
+        }
+      },
+      {
         name: 'permissionList',
         path: 'permissions',
         component: () => import('@/views/permission/PermissionList'),
