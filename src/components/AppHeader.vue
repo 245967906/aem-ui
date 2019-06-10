@@ -6,19 +6,19 @@
         :to="this.$router.match({ name: 'home' })"
       >
         <div class="header-logo"></div>
-        <div class="header-title">{{ $t('HEADER.TITLE') }}</div>
+        <div class="header-title">{{ $t('VIEWS.HEADER.TITLE') }}</div>
       </router-link>
     </el-col>
     <el-col :span="6">
       <div class="header-nav">
         <router-link class="header-nav-item" to="#">{{
-          $t('HEADER.NAV.CLUSTER')
+          $t('VIEWS.HEADER.NAV.CLUSTER')
         }}</router-link>
         <router-link class="header-nav-item" to="#">{{
-          $t('HEADER.NAV.TASK_DEFINITION')
+          $t('VIEWS.HEADER.NAV.TASK_DEFINITION')
         }}</router-link>
         <router-link class="header-nav-item" to="#">{{
-          $t('HEADER.NAV.REGISTRY')
+          $t('VIEWS.HEADER.NAV.REGISTRY')
         }}</router-link>
       </div>
     </el-col>
@@ -27,7 +27,10 @@
         <div class="header-menu-item">
           <el-dropdown trigger="click" size="small">
             <span class="el-dropdown-link">
-              {{ $t('HEADER.LANGUAGE' + '.' + currentLanguage.toUpperCase())
+              {{
+                $t(
+                  'VIEWS.HEADER.LANGUAGE' + '.' + currentLanguage.toUpperCase()
+                )
               }}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -36,7 +39,7 @@
                 :key="index"
                 @click.native="handleLanguageClick(item)"
               >
-                {{ $t('HEADER.LANGUAGE' + '.' + item.toUpperCase()) }}
+                {{ $t('VIEWS.HEADER.LANGUAGE' + '.' + item.toUpperCase()) }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -44,7 +47,7 @@
         <div class="header-menu-item">
           <el-dropdown trigger="click" size="small">
             <span class="el-dropdown-link">
-              {{ $t('HEADER.REGION' + '.' + currentRegion.toUpperCase())
+              {{ $t('VIEWS.HEADER.REGION' + '.' + currentRegion.toUpperCase())
               }}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -53,7 +56,7 @@
                 :key="index"
                 @click.native="handleRegionClick(item)"
               >
-                {{ $t('HEADER.REGION' + '.' + item.toUpperCase()) }}
+                {{ $t('VIEWS.HEADER.REGION' + '.' + item.toUpperCase()) }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -67,18 +70,15 @@
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
                 <router-link :to="$router.match({ name: 'profile' })">
-                  {{ $t('HEADER.MENU.PROFILE') }}
+                  {{ $t('ROUTER.PROFILE') }}
                 </router-link>
               </el-dropdown-item>
               <el-dropdown-item @click.native="logout">{{
-                $t('HEADER.MENU.SIGNOUT')
+                $t('VIEWS.HEADER.SIGNOUT')
               }}</el-dropdown-item>
-              <el-dropdown-item
-                v-if="userProfile.role == admin.value"
-                divided
-              >
+              <el-dropdown-item v-if="userProfile.role == admin.value" divided>
                 <router-link :to="$router.match({ name: 'admin.user' })">
-                  {{ $t('HEADER.MENU.ADMIN') }}
+                  {{ $t('ROUTER.ADMIN.TITLE') }}
                 </router-link>
               </el-dropdown-item>
             </el-dropdown-menu>

@@ -9,8 +9,8 @@
         <el-input
           v-model="payload.username"
           v-validate="'required|min:2|max:20'"
-          :data-vv-as="$t('AUTH.FIELDS.USERNAME')"
-          :placeholder="$t('AUTH.PROMPT.USERNAME')"
+          :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')"
+          :placeholder="$t('VIEWS.AUTH.PLACEHOLDER.USERNAME')"
           name="username"
         ></el-input>
         <span v-if="verrors.has('username')" class="help-block">{{
@@ -24,14 +24,14 @@
         <el-input
           v-model="payload.password"
           v-validate="'required|min:6'"
-          :data-vv-as="$t('AUTH.FIELDS.PASSWORD')"
-          :placeholder="$t('AUTH.PROMPT.PASSWORD')"
+          :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.PASSWORD')"
+          :placeholder="$t('VIEWS.AUTH.PLACEHOLDER.PASSWORD')"
           name="password"
           show-password
         >
           <template slot="append">
             <router-link class="forget-password-btn" to="#">{{
-              $t('AUTH.PROMPT.FORGOT_PASSWORD')
+              $t('VIEWS.AUTH.PLACEHOLDER.FORGOT_PASSWORD')
             }}</router-link>
           </template>
         </el-input>
@@ -41,7 +41,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="login" class="submit-btn">{{
-          $t('AUTH.PROMPT.SIGNIN')
+          $t('VIEWS.AUTH.PLACEHOLDER.SIGNIN')
         }}</el-button>
       </el-form-item>
     </el-form>

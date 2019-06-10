@@ -1,24 +1,24 @@
 <template>
   <el-form v-model="userInfo" ref="form" label-width="200px">
-    <el-form-item :label="$t('ADMIN.USER.LIST.USERNAME')">
+    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')">
       <el-input name="username" v-model="userInfo.username" disabled></el-input>
     </el-form-item>
-    <el-form-item :label="$t('ADMIN.USER.LIST.EMAIL')">
+    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.EMAIL')">
       <el-input name="email" v-model="userInfo.email" disabled></el-input>
     </el-form-item>
-    <el-form-item :label="$t('ADMIN.USER.LIST.ROLE')">
+    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.ROLE')">
       <el-radio-group name="role" v-model="userInfo.role">
         <el-radio
           v-for="(item, index) in userType"
           :key="index"
           :label="item.value"
-          >{{ $t(`TYPE.USERTYPE.${item.name.toUpperCase()}`) }}</el-radio
+          >{{ $t(`TYPE.USER.${item.name.toUpperCase()}`) }}</el-radio
         >
       </el-radio-group>
     </el-form-item>
     <el-form-item>
       <el-button @click="updateUserInfo" type="primary">{{
-        $t('BUTTON.SUBMIT')
+        $t('BUTTON.UPDATE')
       }}</el-button>
     </el-form-item>
   </el-form>

@@ -1,135 +1,96 @@
 {
+  "BUTTON": {
+    "SUBMIT": "确认提交",
+    "CREATE": "创建{name}",
+    "DETAIL": "详情",
+    "UPDATE": "保存配置",
+    "DELETE": "删除",
+    "BULK_DELETE": "批量删除"
+  },
+  "PROMPT": {
+    "ACTION": "操作",
+    "KEYWORD": "请输入搜索关键字"
+  },
+  "TOAST": {
+    "SUCCESS": "更新成功",
+    "ERROR": "网络抽风，请稍后重试"
+  },
+  "RESOURCE": {
+    "USER": {
+      "TITLE": "用户",
+      "ATTRIBUTE": {
+        "USERNAME": "用户名",
+        "PASSWORD": "密码",
+        "EMAIL": "邮箱",
+        "ROLE": "角色",
+        "AWS_ACCESS_KEY_ID": "AWS访问密钥",
+        "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥"
+      }
+    }
+  },
   "ROUTER": {
-    "LOGIN": {
-      "META": {
-        "TITLE": "登录"
-      }
-    },
-    "HOME": {
-      "META": {
-        "TITLE": "首页"
-      }
-    },
-    "PROFILE": {
-      "META": {
-        "TITLE": "个人设置"
-      }
-    },
+    "LOGIN": "登录",
+    "HOME": "首页",
+    "PROFILE": "个人设置",
     "ADMIN": {
-      "META": {
-        "TITLE": "管理后台"
-      },
+      "TITLE": "管理后台",
       "CHILDREN": {
         "USER": {
-          "META": {
-            "TITLE": "用户管理"
-          }
-        },
-        "USER_DETAIL": {
-          "META": {
-            "TITLE": "用户详情"
-          }
+          "LIST": "用户管理",
+          "DETAIL": "用户详情"
         },
         "PERM": {
-          "META": {
-            "TITLE": "权限管理"
-          }
+          "LIST": "权限管理"
         }
       }
     }
   },
   "TYPE": {
-    "USERTYPE": {
+    "USER": {
       "ADMIN": "管理员",
       "OPERATOR": "运维",
       "DEVELOPER": "开发"
     }
   },
-  "AUTH": {
-    "FIELDS": {
-      "USERNAME": "用户名",
-      "PASSWORD": "密码"
-    },
-    "PROMPT": {
-      "USERNAME": "请输入用户名",
-      "PASSWORD": "请输入密码",
-      "FORGOT_PASSWORD": "忘记密码？",
-      "SIGNIN": "登录"
-    }
-  },
-  "HEADER": {
-    "TITLE": "AEM管理控制台",
-    "NAV": {
-      "CLUSTER": "集群",
-      "TASK_DEFINITION": "任务定义",
-      "REGISTRY": "存储库"
-    },
-    "LANGUAGE": {
-      "EN": "English",
-      "ZH": "中文（简体）"
-    },
-    "REGION": {
-      "US-EAST-1": "美国东部（弗吉尼亚北部）",
-      "US-EAST-2": "美国东部（俄亥俄）",
-      "US-WEST-1": "美国西部（加利福尼亚北部）",
-      "US-WEST-2": "美国西部（俄勒冈）",
-      "AP-SOUTH-1": "亚太区域（孟买）",
-      "AP-NORTHEAST-1": "亚太区域（东京）",
-      "AP-NORTHEAST-2": "亚太区域（首尔）",
-      "AP-SOUTHEAST-1": "亚太区域（新加坡）",
-      "AP-SOUTHEAST-2": "亚太区域（悉尼）",
-      "CA-CENTRAL-1": "加拿大（中部）",
-      "EU-CENTRAL-1": "欧洲（法兰克福）",
-      "EU-NORTH-1": "欧洲（斯德哥尔摩）",
-      "EU-WEST-1": "欧洲（爱尔兰）",
-      "EU-WEST-2": "欧洲（伦敦）",
-      "EU-WEST-3": "欧洲（巴黎）",
-      "SA-EAST-1": "南美洲（圣保罗）"
-    },
-    "MENU": {
-      "PROFILE": "个人设置",
-      "SIGNOUT": "注销登录",
-      "ADMIN": "管理后台"
-    }
-  },
-  "PROFILE": {
-    "FIELDS": {
-      "AWS_ACCESS_KEY_ID": "AWS访问密钥",
-      "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥"
-    },
-    "PROMPT": {
-      "USERNAME": "用户名",
-      "EMAIL": "邮箱地址",
-      "ROLE": "角色",
-      "AWS_ACCESS_KEY_ID": "AWS访问密钥",
-      "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥",
-      "UPDATE": "保存配置"
-    },
-    "TOAST": {
-      "SUCCESS": "更新成功",
-      "ERROR": "网络抽风，请稍后重试"
-    }
-  },
-  "BUTTON": {
-    "DETAIL": "详情",
-    "BULK_DELETE": "删除所选",
-    "DELETE": "删除",
-    "SUBMIT": "确认提交"
-  },
-  "PLACEHOLDER": {
-    "KEYWORD": "请输入搜索关键字"
-  },
-  "TITLE": {
-    "ACTION": "操作"
-  },
-  "ADMIN": {
-    "USER": {
-      "CREATE": "创建用户",
-      "LIST": {
-        "USERNAME": "用户名",
-        "EMAIL": "邮箱地址",
-        "ROLE": "角色"
+  "VIEWS": {
+    "AUTH": {
+      "PLACEHOLDER": {
+        "USERNAME": "请输入用户名",
+        "PASSWORD": "请输入密码",
+        "FORGOT_PASSWORD": "忘记密码？",
+        "SIGNIN": "登录"
       }
+    },
+    "HEADER": {
+      "TITLE": "AEM管理控制台",
+      "NAV": {
+        "CLUSTER": "集群",
+        "TASK_DEFINITION": "任务定义",
+        "REGISTRY": "存储库"
+      },
+      "LANGUAGE": {
+        "EN": "English",
+        "ZH": "中文（简体）"
+      },
+      "REGION": {
+        "US-EAST-1": "美国东部（弗吉尼亚北部）",
+        "US-EAST-2": "美国东部（俄亥俄）",
+        "US-WEST-1": "美国西部（加利福尼亚北部）",
+        "US-WEST-2": "美国西部（俄勒冈）",
+        "AP-SOUTH-1": "亚太区域（孟买）",
+        "AP-NORTHEAST-1": "亚太区域（东京）",
+        "AP-NORTHEAST-2": "亚太区域（首尔）",
+        "AP-SOUTHEAST-1": "亚太区域（新加坡）",
+        "AP-SOUTHEAST-2": "亚太区域（悉尼）",
+        "CA-CENTRAL-1": "加拿大（中部）",
+        "EU-CENTRAL-1": "欧洲（法兰克福）",
+        "EU-NORTH-1": "欧洲（斯德哥尔摩）",
+        "EU-WEST-1": "欧洲（爱尔兰）",
+        "EU-WEST-2": "欧洲（伦敦）",
+        "EU-WEST-3": "欧洲（巴黎）",
+        "SA-EAST-1": "南美洲（圣保罗）"
+      },
+      "SIGNOUT": "注销登录"
     }
   }
 }

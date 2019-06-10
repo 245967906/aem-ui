@@ -6,7 +6,9 @@
         size="small"
         type="success"
         @click="handleCreate()"
-        >{{ $t('ADMIN.USER.CREATE') }}</el-button
+        >{{
+          $t('BUTTON.CREATE', { name: $t('RESOURCE.USER.TITLE') })
+        }}</el-button
       >
       <el-button
         class="action-btn"
@@ -19,7 +21,7 @@
         class="action-search"
         v-model="search"
         size="small"
-        :placeholder="$t('PLACEHOLDER.KEYWORD')"
+        :placeholder="$t('PROMPT.KEYWORD')"
       ></el-input>
     </el-row>
     <el-table
@@ -40,27 +42,25 @@
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column
         prop="username"
-        :label="$t('ADMIN.USER.LIST.USERNAME')"
+        :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')"
         sortable
         align="center"
       ></el-table-column>
       <el-table-column
         prop="email"
-        :label="$t('ADMIN.USER.LIST.EMAIL')"
+        :label="$t('RESOURCE.USER.ATTRIBUTE.EMAIL')"
         align="center"
       ></el-table-column>
       <el-table-column
-        :label="$t('ADMIN.USER.LIST.ROLE')"
+        :label="$t('RESOURCE.USER.ATTRIBUTE.ROLE')"
         align="center"
         show-overflow-tooltip
       >
         <template slot-scope="scope">
-          {{
-            $t(`TYPE.USERTYPE.${userType[scope.row.role].name.toUpperCase()}`)
-          }}
+          {{ $t(`TYPE.USER.${userType[scope.row.role].name.toUpperCase()}`) }}
         </template>
       </el-table-column>
-      <el-table-column :label="$t('TITLE.ACTION')" align="center">
+      <el-table-column :label="$t('PROMPT.ACTION')" align="center">
         <template slot-scope="scope">
           <el-button
             size="mini"
