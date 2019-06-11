@@ -12,8 +12,10 @@
     "KEYWORD": "Keyword"
   },
   "TOAST": {
-    "SUCCESS": "Update successfully",
-    "ERROR": "Network failure, please try again later"
+    "CREATED": "Create successfully",
+    "UPDATED": "Update successfully",
+    "DELETED": "Delete successfully",
+    "UNKNOWN_ERROR": "Network failure, please try again later"
   },
   "RESOURCE": {
     "USER": {
@@ -37,7 +39,8 @@
       "CHILDREN": {
         "USER": {
           "LIST": "User Management",
-          "DETAIL": "User Detail"
+          "DETAIL": "User Detail",
+          "CREATE": "Create User"
         },
         "PERM": {
           "LIST": "Perm Management"

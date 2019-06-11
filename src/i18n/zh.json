@@ -12,8 +12,10 @@
     "KEYWORD": "请输入搜索关键字"
   },
   "TOAST": {
-    "SUCCESS": "更新成功",
-    "ERROR": "网络抽风，请稍后重试"
+    "CREATED": "添加成功",
+    "UPDATED": "更新成功",
+    "DELETED": "删除成功",
+    "UNKNOWN_ERROR": "网络抽风，请稍后重试"
   },
   "RESOURCE": {
     "USER": {
@@ -37,7 +39,8 @@
       "CHILDREN": {
         "USER": {
           "LIST": "用户管理",
-          "DETAIL": "用户详情"
+          "DETAIL": "用户详情",
+          "CREATE": "创建用户"
         },
         "PERM": {
           "LIST": "权限管理"
