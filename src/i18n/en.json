@@ -5,11 +5,15 @@
     "DETAIL": "detail",
     "UPDATE": "Save",
     "DELETE": "delete",
-    "BULK_DELETE": "Bulk delete"
+    "BULK_DELETE": "Bulk delete",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel"
   },
   "PROMPT": {
+    "TITLE": "Prompt",
     "ACTION": "Action",
-    "KEYWORD": "Keyword"
+    "KEYWORD": "Keyword",
+    "CONFIRM_DELETE": "This will delete the resource permanently. Continue?"
   },
   "TOAST": {
     "CREATED": "Create successfully",

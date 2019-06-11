@@ -103,17 +103,14 @@ export default {
     }
   },
   methods: {
-    handleCreate () {
+    _handleCreate () {
       this.$router.push({ name: 'userCreate' })
     },
-    handleBulkDelete () {
-      console.log(this.multipleSelection)
-    },
-    handleDetail (index, row) {
+    _handleDetail (row) {
       this.$router.push({ name: 'userDetail', params: { id: row.id } })
     },
-    handleDelete (index, row) {
-      console.log(index, row)
+    _handleDelete (row) {
+      return this.$api.user.destroy(row.id)
     },
     fetchTableData () {
       const limit = this.pageSize

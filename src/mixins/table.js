@@ -36,6 +36,48 @@ export default {
       this.$router.replace({ query: { page: val } })
       this.fetchTableData()
     },
+    handleCreate () {
+      this._handleCreate()
+    },
+    handleDetail (index, row) {
+      this._handleDetail(row)
+    },
+    handleDelete (index, row) {
+      this.confirmDelete().then(() => {
+        this._handleDelete(row).then(() => {
+          this.$message({
+            type: 'success',
+            message: this.$t('TOAST.DELETED')
+          })
+          this.$router.replace({ query: { page: this.currentPage } })
+          this.fetchTableData()
+        })
+      })
+    },
+    handleBulkDelete () {
+      this.confirmDelete().then(() => {
+        const actions = this.multipleSelection.map(this._handleDelete)
+        Promise.all(actions).then(() => {
+          this.$message({
+            type: 'success',
+            message: this.$t('TOAST.DELETED')
+          })
+          this.$router.replace({ query: { page: this.currentPage } })
+          this.fetchTableData()
+        })
+      })
+    },
+    confirmDelete () {
+      return this.$confirm(
+        this.$t('PROMPT.CONFIRM_DELETE'),
+        this.$t('PROMPT.TITLE'),
+        {
+          confirmButtonText: this.$t('BUTTON.CONFIRM'),
+          cancelButtonText: this.$t('BUTTON.CANCEL'),
+          type: 'warning'
+        }
+      )
+    },
     fetchTableData () {
       return this.tableData
     }

@@ -30,3 +30,10 @@ export const update = (id, data) => {
     data
   })
 }
+
+export const destroy = id => {
+  return instance({
+    method: 'delete',
+    url: `/api/users/${id}`
+  })
+}
