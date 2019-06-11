@@ -27,7 +27,7 @@
 <script>
 import { userType } from '@/lib/types'
 export default {
-  name: 'AdminUserDetail',
+  name: 'UserDetail',
   data () {
     return {
       userType,
