@@ -22,3 +22,11 @@ export const create = data => {
     data
   })
 }
+
+export const update = (id, data) => {
+  return instance({
+    method: 'patch',
+    url: `/api/users/${id}`,
+    data
+  })
+}

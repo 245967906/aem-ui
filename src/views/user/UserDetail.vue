@@ -40,7 +40,17 @@ export default {
         this.userInfo = res.data
       })
     },
-    updateUserInfo () {}
+    updateUserInfo () {
+      const payload = { role: this.userInfo.role }
+      this.$api.user.update(this.$route.params.id, payload).then(() => {
+        this.$message({
+          showClose: true,
+          message: this.$t('TOAST.UPDATED'),
+          type: 'success'
+        })
+        this.$router.push({ name: 'userList' })
+      })
+    }
   },
   mounted () {
     this.getUserInfo()
