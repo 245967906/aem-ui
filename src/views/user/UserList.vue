@@ -36,7 +36,7 @@
       tooltip-effect="dark"
       stripe
       style="width: 100%"
-      :default-sort="{ prop: 'username', order: 'ascending' }"
+      :default-sort="{ prop: 'id', order: 'ascending' }"
       @selection-change="handleSelectionChange"
     >
       <el-table-column type="selection" width="55"></el-table-column>
