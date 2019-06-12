@@ -36,7 +36,7 @@
       tooltip-effect="dark"
       stripe
       style="width: 100%"
-      :default-sort="{ prop: 'username', order: 'ascending' }"
+      :default-sort="{ prop: 'id', order: 'ascending' }"
       @selection-change="handleSelectionChange"
     >
       <el-table-column type="selection" width="55"></el-table-column>
@@ -95,7 +95,7 @@
 import TableMixin from '@/mixins/table'
 import { userType } from '@/lib/types'
 export default {
-  name: 'AdminUserList',
+  name: 'UserList',
   mixins: [TableMixin],
   data () {
     return {
@@ -103,17 +103,14 @@ export default {
     }
   },
   methods: {
-    handleCreate () {
+    _handleCreate () {
       this.$router.push({ name: 'userCreate' })
     },
-    handleBulkDelete () {
-      console.log(this.multipleSelection)
-    },
-    handleDetail (index, row) {
+    _handleDetail (row) {
       this.$router.push({ name: 'userDetail', params: { id: row.id } })
     },
-    handleDelete (index, row) {
-      console.log(index, row)
+    _handleDelete (row) {
+      return this.$api.user.destroy(row.id)
     },
     fetchTableData () {
       const limit = this.pageSize
