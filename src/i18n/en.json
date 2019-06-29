@@ -25,7 +25,7 @@
     "USER": {
       "TITLE": "User",
       "ATTRIBUTE": {
-        "USERNAME": "Username",
+        "NAME": "Username",
         "PASSWORD": "Password",
         "EMAIL": "Email",
         "ROLE": "Role",

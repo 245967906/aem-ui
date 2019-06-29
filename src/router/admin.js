@@ -13,7 +13,7 @@ export default [
       },
       {
         name: 'userDetail',
-        path: 'users/:id(\\d+)',
+        path: 'users/:name',
         component: () => import('@/views/user/UserDetail'),
         meta: {
           title: 'ROUTER.ADMIN.CHILDREN.USER.DETAIL',
@@ -22,7 +22,7 @@ export default [
       },
       {
         name: 'userCreate',
-        path: 'users/new',
+        path: 'users/create/new',
         component: () => import('@/views/user/UserCreate'),
         meta: {
           title: 'ROUTER.ADMIN.CHILDREN.USER.CREATE',

@@ -30,7 +30,7 @@
         tableData.results.filter(
           data =>
             !search ||
-            data.username.toLowerCase().includes(search.toLowerCase())
+            data.name.toLowerCase().includes(search.toLowerCase())
         )
       "
       tooltip-effect="dark"
@@ -41,8 +41,8 @@
     >
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column
-        prop="username"
-        :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')"
+        prop="name"
+        :label="$t('RESOURCE.USER.ATTRIBUTE.NAME')"
         sortable
         align="center"
       ></el-table-column>
@@ -107,10 +107,10 @@ export default {
       this.$router.push({ name: 'userCreate' })
     },
     _handleDetail (row) {
-      this.$router.push({ name: 'userDetail', params: { id: row.id } })
+      this.$router.push({ name: 'userDetail', params: { name: row.name } })
     },
     _handleDelete (row) {
-      return this.$api.user.destroy(row.id)
+      return this.$api.user.destroy(row.name)
     },
     fetchTableData () {
       const limit = this.pageSize

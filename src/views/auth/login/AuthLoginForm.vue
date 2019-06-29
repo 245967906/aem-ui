@@ -3,18 +3,18 @@
     <el-form ref="form" :model="payload" label-width="0px">
       <el-form-item
         :class="{
-          'has-error': verrors.has('username') || Object.keys(error).length
+          'has-error': verrors.has('name') || Object.keys(error).length
         }"
       >
         <el-input
-          v-model="payload.username"
+          v-model="payload.name"
           v-validate="'required|min:2|max:20'"
-          :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')"
+          :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.NAME')"
           :placeholder="$t('VIEWS.AUTH.PLACEHOLDER.USERNAME')"
-          name="username"
+          name="name"
         ></el-input>
-        <span v-if="verrors.has('username')" class="help-block">{{
-          verrors.first('username')
+        <span v-if="verrors.has('name')" class="help-block">{{
+          verrors.first('name')
         }}</span>
         <span v-else-if="Object.keys(error).length" class="help-block">{{
           error.message
@@ -54,7 +54,7 @@ export default {
   data () {
     return {
       payload: {
-        username: '',
+        name: '',
         password: ''
       },
       error: {}
