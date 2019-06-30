@@ -1,7 +1,7 @@
 <template>
   <el-form v-model="userInfo" ref="form" label-width="200px">
-    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')">
-      <el-input name="username" v-model="userInfo.username" disabled></el-input>
+    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.NAME')">
+      <el-input name="name" v-model="userInfo.name" disabled></el-input>
     </el-form-item>
     <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.EMAIL')">
       <el-input name="email" v-model="userInfo.email" disabled></el-input>
@@ -36,13 +36,13 @@ export default {
   },
   methods: {
     getUserInfo () {
-      this.$api.user.retrieve(this.$route.params.id).then(res => {
+      this.$api.user.retrieve(this.$route.params.name).then(res => {
         this.userInfo = res.data
       })
     },
     updateUserInfo () {
       const payload = { role: this.userInfo.role }
-      this.$api.user.update(this.$route.params.id, payload).then(() => {
+      this.$api.user.update(this.$route.params.name, payload).then(() => {
         this.$message({
           showClose: true,
           message: this.$t('TOAST.UPDATED'),

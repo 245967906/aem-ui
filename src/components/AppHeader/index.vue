@@ -64,7 +64,7 @@
         <div class="header-menu-item">
           <el-dropdown trigger="click" size="small">
             <span class="el-dropdown-link">
-              {{ userProfile.username
+              {{ userProfile.name
               }}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">

@@ -2,18 +2,23 @@
   <el-form v-model="payload" ref="form" label-width="200px">
     <el-form-item
       :class="{
-        'has-error': verrors.has('username') || Object.keys(error).length
+        'has-error': verrors.has('name') || Object.keys(error).length
       }"
-      :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')"
+      :label="$t('RESOURCE.USER.ATTRIBUTE.NAME')"
     >
       <el-input
-        name="username"
-        v-model="payload.username"
-        v-validate="'required|min:2|max:20'"
-        :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')"
+        name="name"
+        v-model="payload.name"
+        v-validate="{
+          required: true,
+          min: 2,
+          max: 20,
+          regex: /^[a-zA-Z][a-zA-Z0-9_-]*$/
+        }"
+        :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.NAME')"
       ></el-input>
-      <span v-if="verrors.has('username')" class="help-block">{{
-        verrors.first('username')
+      <span v-if="verrors.has('name')" class="help-block">{{
+        verrors.first('name')
       }}</span>
       <span v-else-if="Object.keys(error).length" class="help-block">{{
         error.message
@@ -58,7 +63,7 @@ export default {
   data () {
     return {
       payload: {
-        username: '',
+        name: '',
         email: '',
         role: 0
       },

@@ -2,10 +2,10 @@
   <app-layout>
     <template v-slot:default>
       <el-form v-model="userProfile" ref="form" label-width="200px">
-        <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.USERNAME')">
+        <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.NAME')">
           <el-input
-            name="username"
-            v-model="userProfile.username"
+            name="name"
+            v-model="userProfile.name"
             disabled
           ></el-input>
         </el-form-item>

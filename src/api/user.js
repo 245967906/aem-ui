@@ -8,10 +8,10 @@ export const list = params => {
   })
 }
 
-export const retrieve = id => {
+export const retrieve = name => {
   return instance({
     method: 'get',
-    url: `/api/users/${id}`
+    url: `/api/users/${name}`
   })
 }
 
@@ -23,17 +23,17 @@ export const create = data => {
   })
 }
 
-export const update = (id, data) => {
+export const update = (name, data) => {
   return instance({
     method: 'patch',
-    url: `/api/users/${id}`,
+    url: `/api/users/${name}`,
     data
   })
 }
 
-export const destroy = id => {
+export const destroy = name => {
   return instance({
     method: 'delete',
-    url: `/api/users/${id}`
+    url: `/api/users/${name}`
   })
 }

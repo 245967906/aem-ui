@@ -25,7 +25,7 @@
     "USER": {
       "TITLE": "用户",
       "ATTRIBUTE": {
-        "USERNAME": "用户名",
+        "NAME": "用户名",
         "PASSWORD": "密码",
         "EMAIL": "邮箱",
         "ROLE": "角色",
