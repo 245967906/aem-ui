@@ -29,6 +29,7 @@
         "PASSWORD": "密码",
         "EMAIL": "邮箱",
         "ROLE": "角色",
+        "IS_ACTIVE": "激活",
         "AWS_ACCESS_KEY_ID": "AWS访问密钥",
         "AWS_SECRET_ACCESS_KEY": "AWS私有访问密钥"
       }
@@ -58,6 +59,10 @@
       "OPERATOR": "运维",
       "DEVELOPER": "开发"
     }
+  },
+  "BOOLEAN": {
+    "TRUE": "是",
+    "FALSE": "否"
   },
   "VIEWS": {
     "AUTH": {

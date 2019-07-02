@@ -22,6 +22,7 @@ function getLocale (locales) {
     localStorage.language ||
     navigator.language.toLocaleLowerCase().split('-')[0]
   const locale = locales.indexOf(language) ? language : settings.language
+  localStorage.language = locale
   return locale
 }
 

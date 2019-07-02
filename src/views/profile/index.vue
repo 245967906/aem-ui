@@ -3,11 +3,7 @@
     <template v-slot:default>
       <el-form v-model="userProfile" ref="form" label-width="200px">
         <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.NAME')">
-          <el-input
-            name="name"
-            v-model="userProfile.name"
-            disabled
-          ></el-input>
+          <el-input name="name" v-model="userProfile.name" disabled></el-input>
         </el-form-item>
         <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.EMAIL')">
           <el-input
@@ -90,10 +86,7 @@ export default {
       this.$validator.validateAll().then(isValid => {
         if (isValid) {
           this.$api.profile
-            .update({
-              aws_access_key_id: this.userProfile.aws_access_key_id,
-              aws_secret_access_key: this.userProfile.aws_secret_access_key
-            })
+            .update(this.userProfile)
             .then(res => {
               this.changeUserProfile(res.data)
               this.$message({
