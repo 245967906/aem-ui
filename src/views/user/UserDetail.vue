@@ -16,6 +16,9 @@
         >
       </el-radio-group>
     </el-form-item>
+    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.IS_ACTIVE')">
+      <el-switch v-model="userInfo.is_active"></el-switch>
+    </el-form-item>
     <el-form-item>
       <el-button @click="updateUserInfo" type="primary">{{
         $t('BUTTON.UPDATE')
@@ -41,8 +44,7 @@ export default {
       })
     },
     updateUserInfo () {
-      const payload = { role: this.userInfo.role }
-      this.$api.user.update(this.$route.params.name, payload).then(() => {
+      this.$api.user.update(this.$route.params.name, this.userInfo).then(() => {
         this.$message({
           showClose: true,
           message: this.$t('TOAST.UPDATED'),

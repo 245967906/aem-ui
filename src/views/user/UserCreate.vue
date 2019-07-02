@@ -48,6 +48,9 @@
         >
       </el-radio-group>
     </el-form-item>
+    <el-form-item :label="$t('RESOURCE.USER.ATTRIBUTE.IS_ACTIVE')">
+      <el-switch v-model="payload.is_active"></el-switch>
+    </el-form-item>
     <el-form-item>
       <el-button @click="createUser" type="primary">{{
         $t('BUTTON.SUBMIT')
@@ -65,7 +68,8 @@ export default {
       payload: {
         name: '',
         email: '',
-        role: 0
+        role: 0,
+        is_active: true
       },
       error: {},
       userType

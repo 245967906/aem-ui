@@ -29,8 +29,7 @@
       :data="
         tableData.results.filter(
           data =>
-            !search ||
-            data.name.toLowerCase().includes(search.toLowerCase())
+            !search || data.name.toLowerCase().includes(search.toLowerCase())
         )
       "
       tooltip-effect="dark"
@@ -58,6 +57,14 @@
       >
         <template slot-scope="scope">
           {{ $t(`TYPE.USER.${userType[scope.row.role].name.toUpperCase()}`) }}
+        </template>
+      </el-table-column>
+      <el-table-column
+        :label="$t('RESOURCE.USER.ATTRIBUTE.IS_ACTIVE')"
+        align="center"
+      >
+        <template slot-scope="scope">
+          {{ scope.row.is_active ? $t('BOOLEAN.TRUE') : $t('BOOLEAN.FALSE')}}
         </template>
       </el-table-column>
       <el-table-column :label="$t('PROMPT.ACTION')" align="center">
