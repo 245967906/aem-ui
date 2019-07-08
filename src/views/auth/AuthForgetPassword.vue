@@ -56,7 +56,7 @@
 <script>
 import AuthLayout from './AuthLayout'
 export default {
-  name: 'AuthForget',
+  name: 'AuthForgetPassword',
   components: {
     AuthLayout
   },

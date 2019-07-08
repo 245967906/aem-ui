@@ -40,21 +40,21 @@
     }
   },
   "ROUTER": {
-    "LOGIN": "Login",
-    "Forget": "Forget",
+    "AUTH": {
+      "LOGIN": "Login",
+      "FORGET": "Forget"
+    },
     "HOME": "Home",
     "PROFILE": "Profile",
     "ADMIN": {
-      "TITLE": "Admin",
-      "CHILDREN": {
-        "USER": {
-          "LIST": "User Management",
-          "DETAIL": "User Detail",
-          "CREATE": "Create User"
-        },
-        "PERM": {
-          "LIST": "Perm Management"
-        }
+      "INDEX": "Admin",
+      "USER": {
+        "LIST": "User Management",
+        "DETAIL": "User Detail",
+        "CREATE": "Create User"
+      },
+      "PERM": {
+        "LIST": "Perm Management"
       }
     }
   },
@@ -76,7 +76,7 @@
         "PASSWORD": "password",
         "EMAIL": "email address"
       },
-      "BUTTON":{
+      "BUTTON": {
         "SIGNIN": "Sign in",
         "FORGOT_PASSWORD": "forgot?",
         "RECOVERY": "Recovery",

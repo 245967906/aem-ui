@@ -4,16 +4,16 @@ export default [
     path: '/login',
     component: () => import('@/views/auth/AuthLogin'),
     meta: {
-      title: 'ROUTER.LOGIN',
+      title: 'ROUTER.AUTH.LOGIN',
       requireAuth: false
     }
   },
   {
-    name: 'forget',
+    name: 'forgetPassword',
     path: '/password/forget',
-    component: () => import('@/views/auth/AuthForget'),
+    component: () => import('@/views/auth/AuthForgetPassword'),
     meta: {
-      title: 'ROUTER.FORGET',
+      title: 'ROUTER.AUTH.FORGET',
       requireAuth: false
     }
   }
