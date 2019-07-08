@@ -1,4 +1,13 @@
 @import '~@/assets/styles/variables.styl'
+@import '~@/assets/styles/mixins.styl'
+.el-input__inner::-ms-input-placeholder
+  placeholder()
+.el-input__inner::-webkit-input-placeholder
+  placeholder()
+.el-input-group__append
+  padding 0 10px
+  font-size 12px
+  background #fff
 .el-form-item
   margin-bottom 20px
 .el-form-item__label
@@ -10,6 +19,9 @@
   font-weight 400
 .el-message-box
   padding-bottom 15px
+.el-loading-spinner i, .el-loading-spinner .el-loading-text
+  font-size 16px
+  color #fff
 .has-error .el-input__inner, .has-error .el-input-group__append
   border-color #a94442
 .has-error .el-form-item__content

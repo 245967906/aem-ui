@@ -7,18 +7,22 @@
     "DELETE": "delete",
     "BULK_DELETE": "Bulk delete",
     "CONFIRM": "Confirm",
-    "CANCEL": "Cancel"
+    "CANCEL": "Cancel",
+    "EMAIL": "email"
   },
   "PROMPT": {
     "TITLE": "Prompt",
     "ACTION": "Action",
     "KEYWORD": "Keyword",
-    "CONFIRM_DELETE": "This will delete the resource permanently. Continue?"
+    "CONFIRM_DELETE": "This will delete the resource permanently. Continue?",
+    "LOADING": "loading..."
   },
   "TOAST": {
     "CREATED": "Create successfully",
     "UPDATED": "Update successfully",
     "DELETED": "Delete successfully",
+    "SEND_SUCCESS": "Email sent successfully",
+    "SEND_FAILED": "Email sent failed",
     "UNKNOWN_ERROR": "Network failure, please try again later"
   },
   "RESOURCE": {
@@ -37,6 +41,7 @@
   },
   "ROUTER": {
     "LOGIN": "Login",
+    "Forget": "Forget",
     "HOME": "Home",
     "PROFILE": "Profile",
     "ADMIN": {
@@ -69,9 +74,18 @@
       "PLACEHOLDER": {
         "USERNAME": "username",
         "PASSWORD": "password",
+        "EMAIL": "email address"
+      },
+      "BUTTON":{
+        "SIGNIN": "Sign in",
         "FORGOT_PASSWORD": "forgot?",
-        "SIGNIN": "Sign in"
-      }
+        "RECOVERY": "Recovery",
+        "BACK_LOGIN": "Return to sign in"
+      },
+      "ALERT_TIPS": [
+        "Verify email has been sent successfully.",
+        "Check your email to verify your email address."
+      ]
     },
     "HEADER": {
       "TITLE": "AEM",

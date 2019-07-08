@@ -1,8 +1,8 @@
 <template>
-  <div class="login-container">
-    <div class="login-wrapper">
-      <auth-login-logo></auth-login-logo>
-      <auth-login-form></auth-login-form>
+  <div class="auth-container">
+    <div class="auth-wrapper">
+      <slot name="logo"><auth-logo></auth-logo></slot>
+      <slot></slot>
     </div>
     <app-particles></app-particles>
   </div>
@@ -10,25 +10,23 @@
 
 <script>
 import AppParticles from '@/components/AppParticles'
-import AuthLoginLogo from './AuthLoginLogo'
-import AuthLoginForm from './AuthLoginForm'
+import AuthLogo from './AuthLogo'
 export default {
-  name: 'AuthLogin',
+  name: 'AuthLayout',
   components: {
     AppParticles,
-    AuthLoginLogo,
-    AuthLoginForm
+    AuthLogo
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.login-container
+.auth-container
   height 100%
   display flex
   justify-content center
   align-items center
-  .login-wrapper
+  .auth-wrapper
     z-index 1
     display flex
     flex-direction column

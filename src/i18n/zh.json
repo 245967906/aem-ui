@@ -7,18 +7,22 @@
     "DELETE": "删除",
     "BULK_DELETE": "批量删除",
     "CONFIRM": "确认",
-    "CANCEL": "取消"
+    "CANCEL": "取消",
+    "EMAIL": "激活邮件"
   },
   "PROMPT": {
     "TITLE": "提示",
     "ACTION": "操作",
     "KEYWORD": "请输入搜索关键字",
-    "CONFIRM_DELETE": "此操作将永久删除资源, 是否继续?"
+    "CONFIRM_DELETE": "此操作将永久删除资源, 是否继续?",
+    "LOADING": "拼命加载中..."
   },
   "TOAST": {
     "CREATED": "添加成功",
     "UPDATED": "更新成功",
     "DELETED": "删除成功",
+    "SEND_SUCCESS": "邮件发送成功",
+    "SEND_FAILED": "邮件发送失败",
     "UNKNOWN_ERROR": "网络抽风，请稍后重试"
   },
   "RESOURCE": {
@@ -37,6 +41,7 @@
   },
   "ROUTER": {
     "LOGIN": "登录",
+    "Forget": "忘记密码",
     "HOME": "首页",
     "PROFILE": "个人设置",
     "ADMIN": {
@@ -69,9 +74,18 @@
       "PLACEHOLDER": {
         "USERNAME": "请输入用户名",
         "PASSWORD": "请输入密码",
+        "EMAIL": "邮箱地址"
+      },
+      "BUTTON":{
+        "SIGNIN": "登录",
         "FORGOT_PASSWORD": "忘记密码？",
-        "SIGNIN": "登录"
-      }
+        "RECOVERY": "找回密码",
+        "BACK_LOGIN": "返回登录页"
+      },
+      "ALERT_TIPS": [
+        "验证邮件发送成功。",
+        "请至邮箱查收验证邮件，进行邮箱确认操作。"
+      ]
     },
     "HEADER": {
       "TITLE": "AEM管理控制台",

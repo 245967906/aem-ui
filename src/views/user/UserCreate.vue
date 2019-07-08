@@ -82,7 +82,10 @@ export default {
         if (isValid) {
           this.$api.user
             .create(this.payload)
-            .then(() => {
+            .then(async res => {
+              await this.$api.auth
+                .sendConfirmation({ email: res.data.email })
+                .then()
               this.$message({
                 showClose: true,
                 message: this.$t('TOAST.CREATED'),

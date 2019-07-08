@@ -64,7 +64,7 @@
         align="center"
       >
         <template slot-scope="scope">
-          {{ scope.row.is_active ? $t('BOOLEAN.TRUE') : $t('BOOLEAN.FALSE')}}
+          {{ scope.row.is_active ? $t('BOOLEAN.TRUE') : $t('BOOLEAN.FALSE') }}
         </template>
       </el-table-column>
       <el-table-column :label="$t('PROMPT.ACTION')" align="center">
@@ -80,6 +80,13 @@
             type="text"
             @click="handleDelete(scope.$index, scope.row)"
             >{{ $t('BUTTON.DELETE') }}</el-button
+          >
+          <el-button
+            size="mini"
+            type="text"
+            @click="sendEmail(scope.$index, scope.row)"
+            :loading="loadingIndex == scope.$index"
+            >{{ $t('BUTTON.EMAIL') }}</el-button
           >
         </template>
       </el-table-column>
@@ -106,7 +113,8 @@ export default {
   mixins: [TableMixin],
   data () {
     return {
-      userType
+      userType,
+      loadingIndex: -1
     }
   },
   methods: {
@@ -118,6 +126,27 @@ export default {
     },
     _handleDelete (row) {
       return this.$api.user.destroy(row.name)
+    },
+    sendEmail (index, row) {
+      this.loadingIndex = index
+      this.$api.auth
+        .sendConfirmation({ email: row.email })
+        .then(() => {
+          this.loadingIndex = -1
+          this.$message({
+            showClose: true,
+            message: this.$i18n.t('TOAST.SEND_SUCCESS'),
+            type: 'success'
+          })
+        })
+        .catch(() => {
+          this.loadingIndex = -1
+          this.$message({
+            showClose: true,
+            message: this.$i18n.t('TOAST.SEND_FAILED'),
+            type: 'error'
+          })
+        })
     },
     fetchTableData () {
       const limit = this.pageSize

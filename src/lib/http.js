@@ -1,42 +1,52 @@
+import i18n from '@/i18n'
 import axios from 'axios'
 import router from '@/router'
 import settings from '@/settings'
-import { Message } from 'element-ui'
+import { Loading, Message } from 'element-ui'
+
+let loading
 
 const interceptRequest = request => {
   const auth = JSON.parse(localStorage.getItem('auth'))
   request.headers['Authorization'] = auth ? auth.token : null
   request.headers['Accept-Language'] = localStorage.getItem('language')
+  if (request.loading == true) {
+    loading = Loading.service({
+      fullscreen: true,
+      text: request.loadingText || i18n.t('PROMPT.LOADING'),
+      spinner: 'el-icon-loading',
+      background: 'rgba(0, 0, 0, 0.6)'
+    })
+  }
   return request
 }
 
 const interceptResponseError = error => {
-  if (router.currentRoute.name != 'login') {
-    switch (error.response.data.code) {
-      case 10002:
-        router.replace({
-          name: 'login',
-          query: { redirect: router.currentRoute.fullPath }
-        })
-        break
-      case 10101:
+  switch (error.response.data.code) {
+    case 10002:
+      delete localStorage.auth
+      router.replace({
+        name: 'login',
+        query: { redirect: router.currentRoute.fullPath }
+      })
+      break
+    case 10101:
+      if (router.currentRoute.meta.requireAuth) {
         delete localStorage.auth
         Message({
           showClose: true,
           message: error.response.data.message,
           type: 'error'
         })
-        break
-      default:
-        console.log(error.response.data)
-    }
+      }
+      break
   }
   return error
 }
 
 const instance = axios.create({
   baseURL: settings.baseURL,
-  timeout: 1000,
+  timeout: 0,
   headers: { 'Content-Type': 'application/json' }
 })
 
@@ -51,9 +61,11 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   response => {
+    loading instanceof Object ? loading.close() : null
     return response
   },
   error => {
+    loading instanceof Object ? loading.close() : null
     error = interceptResponseError(error)
     return Promise.reject(error)
   }

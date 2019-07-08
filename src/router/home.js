@@ -4,7 +4,8 @@ export default [
     path: '/',
     component: () => import('@/views/home'),
     meta: {
-      title: 'ROUTER.HOME'
+      title: 'ROUTER.HOME',
+      requireAuth: true
     }
   }
 ]
