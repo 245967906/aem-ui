@@ -21,6 +21,7 @@
     "CREATED": "添加成功",
     "UPDATED": "更新成功",
     "DELETED": "删除成功",
+    "SEND_SUCCESS": "邮件发送成功",
     "SEND_FAILED": "邮件发送失败",
     "UNKNOWN_ERROR": "网络抽风，请稍后重试"
   },

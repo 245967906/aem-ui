@@ -21,7 +21,8 @@
     "CREATED": "Create successfully",
     "UPDATED": "Update successfully",
     "DELETED": "Delete successfully",
-    "SEND_FAILED": "Email send failed",
+    "SEND_SUCCESS": "Email sent successfully",
+    "SEND_FAILED": "Email sent failed",
     "UNKNOWN_ERROR": "Network failure, please try again later"
   },
   "RESOURCE": {
