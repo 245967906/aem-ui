@@ -9,7 +9,10 @@ export default [
         name: 'userList',
         path: 'users',
         component: () => import('@/views/user/UserList'),
-        meta: { title: 'ROUTER.ADMIN.CHILDREN.USER.LIST' }
+        meta: {
+          title: 'ROUTER.ADMIN.CHILDREN.USER.LIST',
+          requireAuth: true
+        }
       },
       {
         name: 'userDetail',
@@ -17,6 +20,7 @@ export default [
         component: () => import('@/views/user/UserDetail'),
         meta: {
           title: 'ROUTER.ADMIN.CHILDREN.USER.DETAIL',
+          requireAuth: true,
           hideNav: true
         }
       },
@@ -26,6 +30,7 @@ export default [
         component: () => import('@/views/user/UserCreate'),
         meta: {
           title: 'ROUTER.ADMIN.CHILDREN.USER.CREATE',
+          requireAuth: true,
           hideNav: true
         }
       },
@@ -33,7 +38,10 @@ export default [
         name: 'permissionList',
         path: 'permissions',
         component: () => import('@/views/permission/PermissionList'),
-        meta: { title: 'ROUTER.ADMIN.CHILDREN.PERM.LIST' }
+        meta: {
+          title: 'ROUTER.ADMIN.CHILDREN.PERM.LIST',
+          requireAuth: true
+        }
       }
     ]
   }

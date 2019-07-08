@@ -1,15 +1,15 @@
 <template>
-  <div class="login-logo"></div>
+  <div class="auth-logo"></div>
 </template>
 
 <script>
 export default {
-  name: 'AuthLoginLogo'
+  name: 'AuthLogo'
 }
 </script>
 
 <style lang="stylus" scoped>
-.login-logo
+.auth-logo
   width 65px
   height 65px
   background url('~@/assets/images/logo.png') no-repeat

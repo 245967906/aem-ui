@@ -7,3 +7,11 @@ export const login = data => {
     data
   })
 }
+
+export const sendConfirmation = data => {
+  return instance({
+    method: 'post',
+    url: '/api/confirmations',
+    data
+  })
+}
