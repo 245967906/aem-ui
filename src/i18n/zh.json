@@ -40,21 +40,21 @@
     }
   },
   "ROUTER": {
-    "LOGIN": "登录",
-    "Forget": "忘记密码",
+    "AUTH": {
+      "LOGIN": "登录",
+      "FORGET": "忘记密码"
+    },
     "HOME": "首页",
     "PROFILE": "个人设置",
     "ADMIN": {
-      "TITLE": "管理后台",
-      "CHILDREN": {
-        "USER": {
-          "LIST": "用户管理",
-          "DETAIL": "用户详情",
-          "CREATE": "创建用户"
-        },
-        "PERM": {
-          "LIST": "权限管理"
-        }
+      "INDEX": "管理后台",
+      "USER": {
+        "LIST": "用户管理",
+        "DETAIL": "用户详情",
+        "CREATE": "创建用户"
+      },
+      "PERM": {
+        "LIST": "权限管理"
       }
     }
   },
@@ -76,7 +76,7 @@
         "PASSWORD": "请输入密码",
         "EMAIL": "邮箱地址"
       },
-      "BUTTON":{
+      "BUTTON": {
         "SIGNIN": "登录",
         "FORGOT_PASSWORD": "忘记密码？",
         "RECOVERY": "找回密码",

@@ -78,7 +78,7 @@
               }}</el-dropdown-item>
               <el-dropdown-item v-if="userProfile.role == admin.value" divided>
                 <router-link :to="$router.match({ name: 'userList' })">
-                  {{ $t('ROUTER.ADMIN.TITLE') }}
+                  {{ $t('ROUTER.ADMIN.INDEX') }}
                 </router-link>
               </el-dropdown-item>
             </el-dropdown-menu>
