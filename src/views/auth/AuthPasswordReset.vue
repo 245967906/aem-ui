@@ -41,7 +41,7 @@
 <script>
 import AuthLayout from './AuthLayout'
 export default {
-  name: 'AuthResetPassword',
+  name: 'AuthPasswordReset',
   components: {
     AuthLayout
   },

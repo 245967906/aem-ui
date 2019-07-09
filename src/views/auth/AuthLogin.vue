@@ -34,7 +34,7 @@
               <template slot="append">
                 <router-link
                   class="forget-password-btn"
-                  :to="$router.match({ name: 'forgetPassword' })"
+                  :to="$router.match({ name: 'passwordForget' })"
                   >{{
                     $t('VIEWS.AUTH.BUTTON.FORGOT_PASSWORD')
                   }}</router-link
