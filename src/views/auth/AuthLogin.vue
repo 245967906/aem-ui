@@ -1,6 +1,6 @@
 <template>
   <auth-layout>
-    <template>
+    <template v-slot:default>
       <div class="login-form">
         <el-form ref="form" :model="payload" label-width="0px">
           <el-form-item
@@ -34,7 +34,7 @@
               <template slot="append">
                 <router-link
                   class="forget-password-btn"
-                  :to="$router.match({ name: 'forgetPassword' })"
+                  :to="$router.match({ name: 'passwordForget' })"
                   >{{
                     $t('VIEWS.AUTH.BUTTON.FORGOT_PASSWORD')
                   }}</router-link

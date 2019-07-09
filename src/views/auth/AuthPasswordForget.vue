@@ -1,8 +1,10 @@
 <template>
   <auth-layout>
-    <template v-slot:logo><div v-if="showAlert"></div></template>
+    <template v-slot:logo>
+      <div v-if="showAlert"></div>
+    </template>
     <template v-slot:default>
-      <div class="reset-form" v-if="!showAlert">
+      <div class="recovery-form" v-if="!showAlert">
         <el-form ref="form" :model="payload" label-width="0px">
           <el-form-item
             :class="{
@@ -56,7 +58,7 @@
 <script>
 import AuthLayout from './AuthLayout'
 export default {
-  name: 'AuthForgetPassword',
+  name: 'AuthPasswordForget',
   components: {
     AuthLayout
   },
@@ -95,7 +97,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.reset-form
+.recovery-form
   margin 20px 0
   width 100%
   .btn-submit

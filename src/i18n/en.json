@@ -42,7 +42,8 @@
   "ROUTER": {
     "AUTH": {
       "LOGIN": "Login",
-      "FORGET": "Forget"
+      "FORGET": "Forget",
+      "RESET": "Reset"
     },
     "HOME": "Home",
     "PROFILE": "Profile",
@@ -80,12 +81,16 @@
         "SIGNIN": "Sign in",
         "FORGOT_PASSWORD": "forgot?",
         "RECOVERY": "Recovery",
-        "BACK_LOGIN": "Return to sign in"
+        "BACK_LOGIN": "Return to sign in",
+        "RESET": "Reset"
       },
       "ALERT_TIPS": [
         "Verify email has been sent successfully.",
         "Check your email to verify your email address."
-      ]
+      ],
+      "PROMPT": {
+        "RESET_SUCCESS": "Password update successfully"
+      }
     },
     "HEADER": {
       "TITLE": "AEM",
