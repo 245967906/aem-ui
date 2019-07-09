@@ -42,7 +42,8 @@
   "ROUTER": {
     "AUTH": {
       "LOGIN": "登录",
-      "FORGET": "忘记密码"
+      "FORGET": "忘记密码",
+      "RESET": "重置密码"
     },
     "HOME": "首页",
     "PROFILE": "个人设置",
@@ -80,12 +81,16 @@
         "SIGNIN": "登录",
         "FORGOT_PASSWORD": "忘记密码？",
         "RECOVERY": "找回密码",
-        "BACK_LOGIN": "返回登录页"
+        "BACK_LOGIN": "返回登录页",
+        "RESET": "重置密码"
       },
       "ALERT_TIPS": [
         "验证邮件发送成功。",
         "请至邮箱查收验证邮件，进行邮箱确认操作。"
-      ]
+      ],
+      "PROMPT": {
+        "RESET_SUCCESS": "密码更新成功"
+      }
     },
     "HEADER": {
       "TITLE": "AEM管理控制台",

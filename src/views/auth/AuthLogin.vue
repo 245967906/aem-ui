@@ -1,6 +1,6 @@
 <template>
   <auth-layout>
-    <template>
+    <template v-slot:default>
       <div class="login-form">
         <el-form ref="form" :model="payload" label-width="0px">
           <el-form-item

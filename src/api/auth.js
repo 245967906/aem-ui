@@ -15,3 +15,11 @@ export const sendConfirmation = data => {
     data
   })
 }
+
+export const resetPassword = data => {
+  return instance({
+    method: 'post',
+    url: '/api/password',
+    data
+  })
+}
