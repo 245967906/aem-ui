@@ -22,37 +22,6 @@
             >
           </el-radio-group>
         </el-form-item>
-        <el-form-item
-          :class="{ 'has-error': verrors.has('aws_access_key_id') }"
-          :label="$t('RESOURCE.USER.ATTRIBUTE.AWS_ACCESS_KEY_ID')"
-        >
-          <el-input
-            name="aws_access_key_id"
-            v-model="userProfile.aws_access_key_id"
-            v-validate="'required|min:20|max:20'"
-            :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.AWS_ACCESS_KEY_ID')"
-            show-password
-          ></el-input>
-          <span :class="{ 'help-block': verrors.has('aws_access_key_id') }">{{
-            verrors.first('aws_access_key_id')
-          }}</span>
-        </el-form-item>
-        <el-form-item
-          :class="{ 'has-error': verrors.has('aws_secret_access_key') }"
-          :label="$t('RESOURCE.USER.ATTRIBUTE.AWS_SECRET_ACCESS_KEY')"
-        >
-          <el-input
-            name="aws_secret_access_key"
-            v-model="userProfile.aws_secret_access_key"
-            v-validate="'required|min:40|max:40'"
-            :data-vv-as="$t('RESOURCE.USER.ATTRIBUTE.AWS_SECRET_ACCESS_KEY')"
-            show-password
-          ></el-input>
-          <span
-            :class="{ 'help-block': verrors.has('aws_secret_access_key') }"
-            >{{ verrors.first('aws_secret_access_key') }}</span
-          >
-        </el-form-item>
         <el-form-item>
           <el-button @click="updateUserProfile" type="primary">{{
             $t('BUTTON.UPDATE')

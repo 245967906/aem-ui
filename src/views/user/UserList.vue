@@ -130,7 +130,7 @@ export default {
     sendEmail (index, row) {
       this.loadingIndex = index
       this.$api.auth
-        .sendConfirmation({ email: row.email })
+        .sendConfirmation({ email: row.email, origin: window.location.origin })
         .then(() => {
           this.loadingIndex = -1
           this.$message({
