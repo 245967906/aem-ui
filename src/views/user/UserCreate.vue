@@ -84,7 +84,10 @@ export default {
             .create(this.payload)
             .then(async res => {
               await this.$api.auth
-                .sendConfirmation({ email: res.data.email })
+                .sendConfirmation({
+                  email: res.data.email,
+                  origin: window.location.origin
+                })
                 .then()
               this.$message({
                 showClose: true,
