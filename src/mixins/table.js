@@ -29,6 +29,6 @@ export default {
     }
   },
   mounted () {
-    this.initTableData()
+    this.init()
   }
 }

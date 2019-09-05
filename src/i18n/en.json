@@ -33,9 +33,37 @@
         "PASSWORD": "Password",
         "EMAIL": "Email",
         "ROLE": "Role",
-        "IS_ACTIVE": "Active",
-        "AWS_ACCESS_KEY_ID": "AWS ACCESS KEY ID",
-        "AWS_SECRET_ACCESS_KEY": "AWS SECRET ACCESS KEY"
+        "IS_ACTIVE": "Active"
+      }
+    },
+    "CLUSTER": {
+      "TITLE": "Cluster",
+      "ATTRIBUTE": {
+        "NAME": "Name",
+        "VERSION": "Version",
+        "ENDPOINT": "Endpoint",
+        "CERTIFICATE": "Certificate",
+        "STATUS": "Status",
+        "ARN": "Arn",
+        "ROLE_ARN": "RoleArn",
+        "VPC_ID": "VpcId",
+        "SUBNETS": "Subnets",
+        "SECURITY_GROUPS": "SecurityGroups",
+        "CREATED_AT": "CreatedAt",
+        "NODE_CONFIG": {
+          "DESIRED": "Desired",
+          "MIN_SIZE": "MinSize",
+          "MAX_SIZE": "MaxSize",
+          "IMAGE_ID": "ImageId",
+          "INSTANCE_TYPE": "InstanceType",
+          "KEY_NAME": "KeyName",
+          "VOLUME_SIZE": "VolumeSize",
+          "SPOT_PRICE": "SpotPrice",
+          "ASSOCIATE_PUBLIC_IP": "AssociatePublicIp",
+          "KUBELET_ARGS": "KubeletArgs",
+          "SUBNETS": "NodeSubnets",
+          "SECURITY_GROUPS": "NodeSecurityGroups"
+        }
       }
     }
   },
@@ -56,6 +84,9 @@
       },
       "PERM": {
         "LIST": "Perm Management"
+      },
+      "CLUSTER": {
+        "LIST": "Cluster Management"
       }
     }
   },

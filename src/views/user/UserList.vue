@@ -5,7 +5,7 @@
         class="action-btn"
         size="small"
         type="success"
-        @click="handleCreate()"
+        @click="create()"
         >{{
           $t('BUTTON.CREATE', { name: $t('RESOURCE.USER.TITLE') })
         }}</el-button
@@ -14,7 +14,7 @@
         class="action-btn"
         size="small"
         type="danger"
-        @click="handleBulkDestroy()"
+        @click="bulkDestroy()"
         >{{ $t('BUTTON.BULK_DELETE') }}</el-button
       >
       <el-input
@@ -72,13 +72,13 @@
           <el-button
             size="mini"
             type="text"
-            @click="handleRetrieve(scope.row)"
+            @click="retrieve(scope.row)"
             >{{ $t('BUTTON.DETAIL') }}</el-button
           >
           <el-button
             size="mini"
             type="text"
-            @click="handleDestroy(scope.row)"
+            @click="destroy(scope.row)"
             >{{ $t('BUTTON.DELETE') }}</el-button
           >
           <el-button
@@ -119,31 +119,31 @@ export default {
     }
   },
   methods: {
-    initTableData () {
+    init () {
       const limit = this.pageSize
       const offset = this.pageSize * (this.currentPage - 1)
       this.$api.user.list({ limit, offset }).then(res => {
         this.tableData = res.data
       })
     },
-    handleCreate () {
+    create () {
       this.$router.push({ name: 'userCreate' })
     },
-    handleRetrieve (row) {
+    retrieve (row) {
       this.$router.push({ name: 'userDetail', params: { name: row.name } })
     },
-    handleDestroy (row) {
+    destroy (row) {
       this.launchResourceDestroyConfirm()
         .then(() => {
           this.$api.user.destroy(row.name).then(() => {
             this.launchDestroySuccessToast()
             this.$router.replace({ query: { page: this.currentPage } })
-            this.initTableData()
+            this.init()
           })
         })
         .catch(() => {})
     },
-    handleBulkDestroy () {
+    bulkDestroy () {
       const users = this.multipleSelection.map(x => x.name)
       this.launchResourceDestroyConfirm()
         .then(() => {
@@ -151,7 +151,7 @@ export default {
           Promise.all(actions).then(() => {
             this.launchDestroySuccessToast()
             this.$router.replace({ query: { page: this.currentPage } })
-            this.initTableData()
+            this.init()
           })
         })
         .catch(() => {})
