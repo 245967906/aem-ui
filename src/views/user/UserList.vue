@@ -14,7 +14,7 @@
         class="action-btn"
         size="small"
         type="danger"
-        @click="handleBulkDelete()"
+        @click="handleBulkDestroy()"
         >{{ $t('BUTTON.BULK_DELETE') }}</el-button
       >
       <el-input
@@ -72,19 +72,19 @@
           <el-button
             size="mini"
             type="text"
-            @click="handleDetail(scope.$index, scope.row)"
+            @click="handleRetrieve(scope.row)"
             >{{ $t('BUTTON.DETAIL') }}</el-button
           >
           <el-button
             size="mini"
             type="text"
-            @click="handleDelete(scope.$index, scope.row)"
+            @click="handleDestroy(scope.row)"
             >{{ $t('BUTTON.DELETE') }}</el-button
           >
           <el-button
             size="mini"
             type="text"
-            @click="sendEmail(scope.$index, scope.row)"
+            @click="handleMailDelivery(scope.$index, scope.row)"
             :loading="loadingIndex == scope.$index"
             >{{ $t('BUTTON.EMAIL') }}</el-button
           >
@@ -106,11 +106,12 @@
 </template>
 
 <script>
-import TableMixin from '@/mixins/table'
+import paginatedTableMixin from '@/mixins/table'
+import noticeMixin from '@/mixins/notice'
 import { userType } from '@/lib/types'
 export default {
   name: 'UserList',
-  mixins: [TableMixin],
+  mixins: [paginatedTableMixin, noticeMixin],
   data () {
     return {
       userType,
@@ -118,46 +119,59 @@ export default {
     }
   },
   methods: {
-    _handleCreate () {
-      this.$router.push({ name: 'userCreate' })
-    },
-    _handleDetail (row) {
-      this.$router.push({ name: 'userDetail', params: { name: row.name } })
-    },
-    _handleDelete (row) {
-      return this.$api.user.destroy(row.name)
-    },
-    sendEmail (index, row) {
-      this.loadingIndex = index
-      this.$api.auth
-        .sendConfirmation({ email: row.email, origin: window.location.origin })
-        .then(() => {
-          this.loadingIndex = -1
-          this.$message({
-            showClose: true,
-            message: this.$i18n.t('TOAST.SEND_SUCCESS'),
-            type: 'success'
-          })
-        })
-        .catch(() => {
-          this.loadingIndex = -1
-          this.$message({
-            showClose: true,
-            message: this.$i18n.t('TOAST.SEND_FAILED'),
-            type: 'error'
-          })
-        })
-    },
-    fetchTableData () {
+    initTableData () {
       const limit = this.pageSize
       const offset = this.pageSize * (this.currentPage - 1)
       this.$api.user.list({ limit, offset }).then(res => {
         this.tableData = res.data
       })
+    },
+    handleCreate () {
+      this.$router.push({ name: 'userCreate' })
+    },
+    handleRetrieve (row) {
+      this.$router.push({ name: 'userDetail', params: { name: row.name } })
+    },
+    handleDestroy (row) {
+      this.launchResourceDestroyConfirm()
+        .then(() => {
+          this.$api.user.destroy(row.name).then(() => {
+            this.launchDestroySuccessToast()
+            this.$router.replace({ query: { page: this.currentPage } })
+            this.initTableData()
+          })
+        })
+        .catch(() => {})
+    },
+    handleBulkDestroy () {
+      const users = this.multipleSelection.map(x => x.name)
+      this.launchResourceDestroyConfirm()
+        .then(() => {
+          const actions = users.map(this.$api.user.destroy)
+          Promise.all(actions).then(() => {
+            this.launchDestroySuccessToast()
+            this.$router.replace({ query: { page: this.currentPage } })
+            this.initTableData()
+          })
+        })
+        .catch(() => {})
+    },
+    async handleMailDelivery (index, row) {
+      const data = {
+        email: row.email,
+        origin: window.location.origin
+      }
+      this.loadingIndex = index
+      await this.$api.auth
+        .sendConfirmation(data)
+        .then(() => {
+          this.launchMailDeliverySuccessToast()
+        })
+        .catch(() => {
+          this.launchMailDeliveryFailedToast()
+        })
+      this.loadingIndex = -1
     }
-  },
-  mounted () {
-    this.fetchTableData()
   }
 }
 </script>
