@@ -5,13 +5,14 @@ import auth from './auth'
 import home from './home'
 import profile from './profile'
 import admin from './admin'
+import cluster from './cluster'
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: Array.prototype.concat(auth, home, profile, admin)
+  routes: Array.prototype.concat(auth, home, profile, admin, cluster)
 })
 
 router.beforeEach((to, from, next) => {

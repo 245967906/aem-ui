@@ -5,12 +5,13 @@ import settings from '@/settings'
 import { Loading, Message } from 'element-ui'
 
 let loading
+let count = 0
 
 const interceptRequest = request => {
   const auth = JSON.parse(localStorage.getItem('auth'))
   request.headers['Authorization'] = auth ? auth.token : null
   request.headers['Accept-Language'] = localStorage.getItem('language')
-  if (request.loading == true) {
+  if (request.loading && !count++) {
     loading = Loading.service({
       fullscreen: true,
       text: request.loadingText || i18n.t('PROMPT.LOADING'),
@@ -61,11 +62,12 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   response => {
-    loading instanceof Object ? loading.close() : null
+    if (response.config.loading) {
+      --count || loading.close()
+    }
     return response
   },
   error => {
-    loading instanceof Object ? loading.close() : null
     error = interceptResponseError(error)
     return Promise.reject(error)
   }

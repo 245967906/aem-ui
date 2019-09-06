@@ -1,19 +1,18 @@
 <template>
   <el-row class="header-container">
     <el-col :span="4">
-      <router-link
-        class="header-brand"
-        :to="this.$router.match({ name: 'home' })"
-      >
+      <router-link class="header-brand" :to="$router.match({ name: 'home' })">
         <div class="header-logo"></div>
         <div class="header-title">{{ $t('VIEWS.HEADER.TITLE') }}</div>
       </router-link>
     </el-col>
     <el-col :span="6">
       <div class="header-nav">
-        <router-link class="header-nav-item" to="#">{{
-          $t('VIEWS.HEADER.NAV.CLUSTER')
-        }}</router-link>
+        <router-link
+          class="header-nav-item"
+          :to="$router.match({ name: 'clusterList' })"
+          >{{ $t('VIEWS.HEADER.NAV.CLUSTER') }}</router-link
+        >
         <router-link class="header-nav-item" to="#">{{
           $t('VIEWS.HEADER.NAV.TASK_DEFINITION')
         }}</router-link>
