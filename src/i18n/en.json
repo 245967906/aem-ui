@@ -84,10 +84,10 @@
       },
       "PERM": {
         "LIST": "Perm Management"
-      },
-      "CLUSTER": {
-        "LIST": "Cluster Management"
       }
+    },
+    "CLUSTER": {
+      "LIST": "Cluster Management"
     }
   },
   "TYPE": {

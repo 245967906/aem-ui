@@ -111,7 +111,7 @@ export default {
           this.$api.cluster.destroy(row.name).then(() => {
             this.launchDestroySuccessToast()
             this.$router.replace({ query: { page: this.currentPage } })
-            this.initTableData()
+            this.init()
           })
         })
         .catch(() => {})
