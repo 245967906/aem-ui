@@ -2,6 +2,13 @@ export default {
   name: 'noticeMixin',
   methods: {
     // toasts
+    launchUpdateSuccessToast () {
+      this.$message({
+        showClose: true,
+        message: this.$t('TOAST.UPDATED'),
+        type: 'success'
+      })
+    },
     launchDestroySuccessToast () {
       this.$message({
         type: 'success',
@@ -20,10 +27,10 @@ export default {
       this.$message({
         type: 'success',
         message: this.$i18n.t('TOAST.SEND_SUCCESS'),
-        showClose: true,
+        showClose: true
       })
     },
-  // confirms
+    // confirms
     launchResourceDestroyConfirm () {
       const message = this.$t('PROMPT.CONFIRM_DELETE')
       const title = this.$t('PROMPT.TITLE')

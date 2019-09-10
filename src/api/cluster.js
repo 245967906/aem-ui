@@ -12,7 +12,8 @@ export const list = params => {
 export const retrieve = name => {
   return instance({
     method: 'get',
-    url: `/api/clusters/${name}`
+    url: `/api/clusters/${name}`,
+    loading: true
   })
 }
 

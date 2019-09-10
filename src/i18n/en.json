@@ -8,7 +8,8 @@
     "BULK_DELETE": "Bulk delete",
     "CONFIRM": "Confirm",
     "CANCEL": "Cancel",
-    "EMAIL": "email"
+    "EMAIL": "email",
+    "MODIFY": "Modify"
   },
   "PROMPT": {
     "TITLE": "Prompt",
@@ -45,7 +46,7 @@
         "CERTIFICATE": "Certificate",
         "STATUS": "Status",
         "ARN": "Arn",
-        "ROLE_ARN": "RoleArn",
+        "ROLE_ARN": "Role Arn",
         "VPC_ID": "VpcId",
         "SUBNETS": "Subnets",
         "SECURITY_GROUPS": "SecurityGroups",
@@ -87,7 +88,8 @@
       }
     },
     "CLUSTER": {
-      "LIST": "Cluster Management"
+      "LIST": "Cluster Management",
+      "DETAIL": "Cluster Detail"
     }
   },
   "TYPE": {
@@ -153,6 +155,12 @@
         "SA-EAST-1": "South America (São Paulo)"
       },
       "SIGNOUT": "Sign out"
+    },
+    "CLUSTER":{
+      "TITLE": {
+        "MASTER": "Cluster Configuration",
+        "NODE": "Node Configuration"
+      }
     }
   }
 }

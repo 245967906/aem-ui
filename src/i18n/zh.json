@@ -8,7 +8,8 @@
     "BULK_DELETE": "批量删除",
     "CONFIRM": "确认",
     "CANCEL": "取消",
-    "EMAIL": "激活邮件"
+    "EMAIL": "激活邮件",
+    "MODIFY": "修改"
   },
   "PROMPT": {
     "TITLE": "提示",
@@ -41,19 +42,19 @@
       "ATTRIBUTE": {
         "NAME": "名称",
         "VERSION": "版本",
-        "ENDPOINT": "端点",
+        "ENDPOINT": "Apiserver",
         "CERTIFICATE": "证书",
         "STATUS": "状态",
         "ARN": "Arn",
-        "ROLE_ARN": "RoleArn",
+        "ROLE_ARN": "Role Arn",
         "VPC_ID": "VpcId",
         "SUBNETS": "子网",
         "SECURITY_GROUPS": "安全组",
         "CREATED_AT": "创建时间",
         "NODE_CONFIG": {
           "DESIRED": "所需容量",
-          "MIN_SIZE": "最小",
-          "MAX_SIZE": "最大",
+          "MIN_SIZE": "最小容量",
+          "MAX_SIZE": "最大容量",
           "IMAGE_ID": "镜像Id",
           "INSTANCE_TYPE": "实例类型",
           "KEY_NAME": "密钥对",
@@ -87,7 +88,8 @@
       }
     },
     "CLUSTER": {
-      "LIST": "集群管理"
+      "LIST": "集群管理",
+      "DETAIL": "集群详情"
     }
   },
   "TYPE": {
@@ -153,6 +155,12 @@
         "SA-EAST-1": "南美洲（圣保罗）"
       },
       "SIGNOUT": "注销登录"
+    },
+    "CLUSTER":{
+      "TITLE": {
+        "MASTER": "集群配置",
+        "NODE": "节点配置"
+      }
     }
   }
 }
