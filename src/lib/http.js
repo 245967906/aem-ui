@@ -11,6 +11,10 @@ const interceptRequest = request => {
   const auth = JSON.parse(localStorage.getItem('auth'))
   request.headers['Authorization'] = auth ? auth.token : null
   request.headers['Accept-Language'] = localStorage.getItem('language')
+  if (request.withRegion) {
+    const params = { region: localStorage.region }
+    request.params = Object.assign(params, request.params)
+  }
   if (request.loading && !count++) {
     loading = Loading.service({
       fullscreen: true,

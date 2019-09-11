@@ -22,6 +22,7 @@
     "CREATED": "Create successfully",
     "UPDATED": "Update successfully",
     "DELETED": "Delete successfully",
+    "UPDATE_FAILED": "Update failed, {message}",
     "SEND_SUCCESS": "Email sent successfully",
     "SEND_FAILED": "Email sent failed",
     "UNKNOWN_ERROR": "Network failure, please try again later"
