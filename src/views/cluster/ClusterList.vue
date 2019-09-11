@@ -89,7 +89,9 @@ export default {
   },
   mixins: [paginatedTableMixin, noticeMixin],
   data () {
-    return {}
+    return {
+      tableData: {}
+    }
   },
   methods: {
     init () {
@@ -107,11 +109,11 @@ export default {
     },
     destroy (row) {
       this.launchResourceDestroyConfirm()
-        .then(() => {
-          this.$api.cluster.destroy(row.name).then(() => {
-            this.launchDestroySuccessToast()
+        .then(async () => {
+          await this.$api.cluster.destroy(row.name).then(async () => {
+            await this.init()
             this.$router.replace({ query: { page: this.currentPage } })
-            this.init()
+            this.launchDestroySuccessToast()
           })
         })
         .catch(() => {})
