@@ -299,6 +299,7 @@
             v-model="cluster.node_config.desired"
             v-validate="{
               required: true,
+              numeric: true,
               min_value: 0,
               between: {
                 min: cluster.node_config.min_size,
@@ -319,7 +320,7 @@
           <el-input
             name="min_size"
             v-model="cluster.node_config.min_size"
-            v-validate="'required|min_value:0'"
+            v-validate="'required|numeric|min_value:0'"
             :data-vv-as="$t('RESOURCE.CLUSTER.ATTRIBUTE.NODE_CONFIG.MIN_SIZE')"
           ></el-input>
           <span v-if="verrors.has('min_size')" class="help-block">{{
@@ -334,7 +335,7 @@
           <el-input
             name="max_size"
             v-model="cluster.node_config.max_size"
-            v-validate="'required|min_value:0'"
+            v-validate="'required|numeric|min_value:0'"
             :data-vv-as="$t('RESOURCE.CLUSTER.ATTRIBUTE.NODE_CONFIG.MAX_SIZE')"
           ></el-input>
           <span v-if="verrors.has('max_size')" class="help-block">{{
@@ -497,14 +498,14 @@ export default {
         security_groups: [],
         created_at: '',
         node_config: {
-          desired: 0,
-          min_size: 0,
-          max_size: 0,
+          desired: '',
+          min_size: '',
+          max_size: '',
           image_id: '',
           instance_type: '',
           key_name: '',
-          volume_size: 0,
-          spot_price: 0,
+          volume_size: '',
+          spot_price: '',
           associate_public_ip: false,
           kubelet_args: '',
           subnets: [],

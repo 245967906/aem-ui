@@ -89,7 +89,8 @@
     },
     "CLUSTER": {
       "LIST": "集群管理",
-      "DETAIL": "集群详情"
+      "DETAIL": "集群详情",
+      "CREATE": "创建集群"
     }
   },
   "TYPE": {

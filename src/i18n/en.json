@@ -89,7 +89,8 @@
     },
     "CLUSTER": {
       "LIST": "Cluster Management",
-      "DETAIL": "Cluster Detail"
+      "DETAIL": "Cluster Detail",
+      "CREATE": "Create Cluster"
     }
   },
   "TYPE": {

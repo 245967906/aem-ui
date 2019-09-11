@@ -2,6 +2,13 @@ export default {
   name: 'noticeMixin',
   methods: {
     // toasts
+    launchCreateSuccessToast () {
+      this.$message({
+        showClose: true,
+        message: this.$t('TOAST.CREATED'),
+        type: 'success'
+      })
+    },
     launchUpdateSuccessToast () {
       this.$message({
         showClose: true,

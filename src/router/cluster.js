@@ -16,5 +16,14 @@ export default [
       title: 'ROUTER.CLUSTER.DETAIL',
       requireAuth: true
     }
+  },
+  {
+    name: 'clusterCreate',
+    path: '/clusters/create/new',
+    component: () => import('@/views/cluster/ClusterCreate'),
+    meta: {
+      title: 'ROUTER.CLUSTER.CREATE',
+      requireAuth: true
+    }
   }
 ]
