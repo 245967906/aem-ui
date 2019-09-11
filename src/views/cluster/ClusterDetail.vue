@@ -525,10 +525,15 @@ export default {
       this.$validator.validateAll().then(isValid => {
         if (isValid) {
           const name = this.$route.params.name
-          this.$api.cluster.update(name, this.cluster).then(() => {
-            this.launchUpdateSuccessToast()
-            this.init()
-          })
+          this.$api.cluster
+            .update(name, this.cluster)
+            .then(() => {
+              this.launchUpdateSuccessToast()
+              this.init()
+            })
+            .catch(error => {
+              this.launchUpdateFailedToast(error.response.data.message)
+            })
           this.dialogFormVisible = false
         }
       })

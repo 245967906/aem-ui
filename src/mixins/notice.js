@@ -32,11 +32,19 @@ export default {
     },
     launchMailDeliveryFailedToast () {
       this.$message({
-        type: 'success',
-        message: this.$i18n.t('TOAST.SEND_SUCCESS'),
+        type: 'error',
+        message: this.$i18n.t('TOAST.SEND_FAILED'),
         showClose: true
       })
     },
+    launchUpdateFailedToast (message) {
+      this.$message({
+        type: 'error',
+        message: this.$i18n.t('TOAST.UPDATE_FAILED', {message}),
+        showClose: true
+      })
+    },
+
     // confirms
     launchResourceDestroyConfirm () {
       const message = this.$t('PROMPT.CONFIRM_DELETE')
