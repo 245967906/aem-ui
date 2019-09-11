@@ -476,7 +476,6 @@
 <script>
 import AppLayout from '@/components/AppLayout'
 import noticeMixin from '@/mixins/notice'
-import { error } from 'util'
 export default {
   name: 'ClusterDetail',
   components: {
