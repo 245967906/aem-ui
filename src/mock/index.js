@@ -6,10 +6,10 @@ import * as cluster from '@/mock/cluster'
 
 Mock.setup({ timeout: '200-300' })
 
-Mock.mock('/api/tokens', 'post', auth.login())
+Mock.mock('/api/tokens', 'post', auth.login)
 Mock.mock('/api/confirmations', 'post', {})
 Mock.mock('/api/password', 'post', {})
-Mock.mock('/api/me', 'get', profile.retrieve())
+Mock.mock('/api/me', 'get', profile.retrieve)
 Mock.mock('/api/me', 'patch', profile.update)
 Mock.mock(RegExp('/api/users\\?.*'), 'get', user.list)
 Mock.mock(RegExp('/api/users/.*'), 'get', user.retrieve)
