@@ -66,7 +66,8 @@ export default {
     return {
       showAlert: false,
       payload: {
-        email: ''
+        email: '',
+        origin: window.location.origin
       },
       error: {}
     }

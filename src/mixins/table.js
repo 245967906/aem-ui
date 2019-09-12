@@ -20,12 +20,12 @@ export default {
       this.pageSize = val
       this.currentPage = 1
       this.$router.replace({ query: { page: 1 } })
-      this.initTableData()
+      this.init()
     },
     handleCurrentChange (val) {
       this.currentPage = val
       this.$router.replace({ query: { page: val } })
-      this.initTableData()
+      this.init()
     }
   },
   mounted () {
