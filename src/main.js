@@ -12,6 +12,8 @@ import './assets/themes/element-variables.scss'
 import './assets/styles/reset.styl'
 import './assets/styles/global.styl'
 
+process.env.NODE_ENV == 'development' && require('@/mock')
+
 Vue.config.productionTip = false
 Vue.prototype.$api = api
 
